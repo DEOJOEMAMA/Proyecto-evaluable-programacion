@@ -1,2 +1,2 @@
-# Proyecto-evaluable-programaci-n
+# Proyecto-evaluable-programación
 Proyecto juego
