@@ -1,4 +1,4 @@
-package jueego;
+package jueegoJava;
 
 public class Inicio{
 
