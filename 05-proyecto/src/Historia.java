@@ -19,9 +19,9 @@ public class Historia {
 
         Eleccion.elij1();
 
-        System.out.println("\nLlegas a las puertas de un antiguo complejo tecnológico militar sellado a cal y canto. El paso está completamente bloqueado.");
+        System.out.println("\nLlegas a las puertas de un antiguo complejo tecnológico militar sellado a cal y canto. El paso está completamente bloqueado.\n");
 
-
+        Eleccion.elij2();
 
     }
 
@@ -29,6 +29,30 @@ public class Historia {
 
     public static int karma = 0;
 
+    public static void escExt(){
+
+        System.out.println("\nTe apartas de la pesada puerta blindada y bordeas los muros de hormigón agrietado del complejo militar. " +
+                "\nEntre matorrales secos y cables colgando, localizas una vieja caja de conexiones de Vault-Tech cubierta de óxido y polvo radiactivo.");
+
+        System.out.println("\n--- HACKING DE PUERTA --- \n");
+
+        while (true) {
+            boolean ganado = Ahorcado.jugarAhorcado();
+
+            if (ganado == true) {
+
+                return;
+
+            }else if (ganado!=true){
+
+                System.out.println("Te has electrocutado, pierdes 10pv");
+                SistemaVida.vida-=10;
+
+            }
+
+        }
+
+    }
 
 
 }

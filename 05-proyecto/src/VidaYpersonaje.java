@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class VidaYpersonaje {
 
-    public static int pv = 0;
+    public static int pv;
 
     public static void elecion(){
 
@@ -15,8 +15,8 @@ public class VidaYpersonaje {
             if (elec.equalsIgnoreCase("humano")){
 
                 System.out.println("\u001B[35mHas elegido ser humano \u001B[35m");
-                int vida = pv+100;
-                System.out.println("Tienes " + vida+ "pv");
+                pv+=100;
+                System.out.println("Tienes " + pv+ "pv");
 
                 System.out.println();
                 System.out.println("\033[32m---- Historia ----\033[32m");
@@ -36,8 +36,8 @@ public class VidaYpersonaje {
             }else if (elec.equalsIgnoreCase("mutante")){
 
                 System.out.println("\u001B[35mHas elegido ser mutante \u001B[35m");
-                int vid = pv + 85;
-                System.out.println("Tienes " + vid + "pv");
+                pv+=85;
+                System.out.println("Tienes " + pv + "pv");
 
                 System.out.println("\n\033[32m---- Historia ----\033[32m");
                 System.out.println("No hay refugios para ti. Abres los ojos bajo el sol abrasador y el polvo radiactivo de una ciudad en ruinas en pleno Yermo. " +
