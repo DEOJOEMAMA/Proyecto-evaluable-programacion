@@ -3,7 +3,8 @@ import java.util.Random;
 public class ItemsYcajas {
 
     public static String[] items = {"Rifle de palanca", "Pistola Chatarra", "M16", "AK74", "Palanca", "Cuchillo", "Lanza",
-                "Fusion Core", "Balas pistola", "Balas rifle", "Enemigo", "Servo Armadura"}; // CLASE STRING PARA QUE PUEDA FUNCIONAR EN LAS OTRAS DOS FUNCIONES
+                "Fusion Core", "Balas pistola", "Balas rifle", "Enemigo", "Servo Armadura"}; // CREO UNA VARIABLE DE CLASE STRING[] PARA QUE PUEDA FUNCIONAR DENTRO
+                                                                                            // EN LAS OTRAS DOS FUNCIONES
 
         //EXCLUIR AL INVESTIGAR CAJAS O ARMARIOS, NO ES POSIBLE ENCONTRAR UNA SERVOARMADURA EN UNA CAJA
 

@@ -4,7 +4,7 @@ public class Inventario {
 
     public static String[] inventory = new String[10];
 
-    public static int itemCount=0;
+    public static int itemCount=0; //variable de clase
 
     public static void itemToInv(String objeto){
 
@@ -35,7 +35,7 @@ public class Inventario {
     }
 
     public static void mostrarInv(){
-        System.out.println("=== Tu inventario actual ===");
+        System.out.println("\033[32m=== Tu inventario actual ===\033[32m");
         for (int i = 0; i< inventory.length; i++){
 
             System.out.println(i+"." + " "+ inventory[i]);
