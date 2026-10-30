@@ -19,6 +19,8 @@ public class ItemsYcajas {
 
         int randCaj = rdm.nextInt(3);
         int rand = rdm.nextInt(11); // NÚMERO RANDOM HASTA EL 11
+
+
         if (randCaj!=2){
 
             if(rand == 10){ // EL IF COMBPRUEBA QUE LA VARIABLE RAND SAQUE UN 10 PARA QUE INICIE EL COMBATE CON EL ENEMIGO
@@ -35,7 +37,7 @@ public class ItemsYcajas {
             }
 
         }else if (randCaj==2){
-
+            System.out.println("Es una caja fuerte, para abrirla se iniciará un minijuego de ahorcado");
             boolean ganado = Ahorcado.jugarAhorcado();
 
             if(ganado==true){
