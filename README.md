@@ -10,3 +10,16 @@
 ## Descripción del proyecto
 Nuestro juego consiste en una aventura narrativa con interacciones donde el jugador toma decisiones que pueden afectar el transcurso de una historia con miniuegos, "inventario" y más.
 
+## Progreso actual
+* Inicio de la historia (En desarrollo)
+* Juego de ahorcado (completdo)
+* Sistema inventario (completado)
+* Sistema saqueo (completado)
+* Elección de raza (completado)
+
+
+## Por hacer
+* Historia
+* Sistema de combate
+* Facciones
+  
