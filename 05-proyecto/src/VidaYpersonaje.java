@@ -26,13 +26,28 @@ public class VidaYpersonaje {
             Inventario.itemsToInv("Balas pistola");
             Inventario.itemsToInv("Mapa");
 
-            Inventario.mostrarInv();
+            System.out.println();
+            System.out.println("Una alarma sorda comienza a sonar en el búnker. Los sellos de la gran puerta acorazada empiezan a girar. " +
+                    "\nEs hora de dar el primer paso hacia lo desconocido.");
+
+
         }else if (elec.equalsIgnoreCase("mutante")){
 
-            System.out.println("\u001B[35m Has elegido ser mutante \u001B[35m");
+            System.out.println("\u001B[35mHas elegido ser mutante \u001B[35m");
             int vid = pv + 85;
-
             System.out.println("Tienes " + vid + "pv");
+
+            System.out.println("\n\033[32m---- Historia ----\033[32m");
+            System.out.println("No hay refugios para ti. Abres los ojos bajo el sol abrasador y el polvo radiactivo de una ciudad en ruinas en pleno Yermo. " +
+                    "\nTu piel está putrefacta, pero notas una extraña regeneración fluyendo por tus venas.");
+
+            System.out.println("\nRebuscas entre tus harapos y preparas tu equipo de supervivencia: ");
+
+            Inventario.itemsToInv("Rifle palanca");
+            Inventario.itemsToInv("Balas rifle");
+            Inventario.itemsToInv("Mapa");
+
+            System.out.println("\nA lo lejos, siluetas de criaturas hostiles merodean entre los escombros irradiados. Tienes que sobrevivir a este infierno.");
 
         }else {
 
