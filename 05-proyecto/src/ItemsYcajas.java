@@ -6,7 +6,7 @@ public class ItemsYcajas {
                 "Fusion Core", "Balas pistola", "Balas rifle", "Enemigo", "Servo Armadura"}; // CREO UNA VARIABLE DE CLASE STRING[] PARA QUE PUEDA FUNCIONAR DENTRO
                                                                                             // EN LAS OTRAS DOS FUNCIONES
 
-        //EXCLUIR AL INVESTIGAR CAJAS O ARMARIOS, NO ES POSIBLE ENCONTRAR UNA SERVOARMADURA EN UNA CAJA
+    //EXCLUIR AL INVESTIGAR CAJAS O ARMARIOS, NO ES POSIBLE ENCONTRAR UNA SERVOARMADURA EN UNA CAJA
 
     public static void item(){
 
@@ -15,24 +15,43 @@ public class ItemsYcajas {
     }
 
     public static void cajas(){
-
         Random rdm = new Random();
 
+        int randCaj = rdm.nextInt(3);
         int rand = rdm.nextInt(11); // NÚMERO RANDOM HASTA EL 11
+        if (randCaj!=2){
 
-        if(rand == 10){ // EL IF COMBPRUEBA QUE LA VARIABLE RAND SAQUE UN 10 PARA QUE INICIE EL COMBATE CON EL ENEMIGO
+            if(rand == 10){ // EL IF COMBPRUEBA QUE LA VARIABLE RAND SAQUE UN 10 PARA QUE INICIE EL COMBATE CON EL ENEMIGO
 
-            System.out.println( "¡Ha aparecido un" + items[11] + "!"+ " ¡Te ves envuelto en un combate!");
+                System.out.println( "¡Ha aparecido un" + items[10] + "!"+ " ¡Te ves envuelto en un combate!");
 
-        }else{
+            }else{
 
-            String itemencontrado = items[rand];
+                String itemencontrado = items[rand];
 
-            System.out.println("---- Has encontrado "+ itemencontrado + " ----");
+                System.out.println("---- Has encontrado "+ itemencontrado + " ----");
 
-            Inventario.itemToInv(itemencontrado);
-        }
+                Inventario.itemToInv(itemencontrado);
+            }
 
-    }
+        }else if (randCaj==2){
+
+            boolean ganado = Ahorcado.jugarAhorcado();
+
+            if(ganado==true){
+
+                int rng = rdm.nextInt(10);
+
+                    String itemencontrado = items[rng];
+
+                    System.out.println("---- Has encontrado "+ itemencontrado + " ----");
+
+                    Inventario.itemToInv(itemencontrado);
+                }
+
+            }
+
+       }
 
 }
+

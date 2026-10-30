@@ -72,9 +72,9 @@ public class Ahorcado {
         //Comprueba si ganaste o perdiste
         if (aciertos == longitud){
             ganar = true;
-            System.out.print("\033[32m¡Ganaste! la palabra es: "+ palabraElegida);
+            System.out.println("\033[32m¡Ganaste! la palabra es: "+ palabraElegida);
         } else if (fallos == 5) {
-            System.out.print("\033[31m¡Perdiste! la palabra es: "+ palabraElegida);
+            System.out.println("\033[31m¡Perdiste! la palabra es: "+ palabraElegida);
         }
         return ganar;
     }
