@@ -18,6 +18,8 @@ Nuestro juego consiste en una aventura narrativa con interacciones donde el juga
 * Sistema inventario (completado)
 * Sistema saqueo (completado)
 * Elección de raza (completado)
+* Sistema de vida (completado)
+* Si eliges una opción no declarada te permite volver a elegir
 
 ----
 
