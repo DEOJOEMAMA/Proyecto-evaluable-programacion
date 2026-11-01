@@ -27,5 +27,5 @@ Nuestro juego consiste en una aventura narrativa con interacciones donde el juga
 * Historia
 * Sistema de combate
 * Facciones
-* Inicio historia mutante
+
   
