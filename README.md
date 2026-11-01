@@ -14,6 +14,7 @@ Nuestro juego consiste en una aventura narrativa con interacciones donde el juga
 
 ## Progreso actual
 * Inicio historia humano (completado)
+* Inicio historia mutante (completado)
 * Juego de ahorcado (completdo)
 * Sistema inventario (completado)
 * Sistema saqueo (completado)
