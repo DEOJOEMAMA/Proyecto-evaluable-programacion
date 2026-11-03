@@ -61,5 +61,33 @@ public class Inventario {
 
     }
 
+    // Devuelve la posición del objeto, o -1 si no está
+    public static int buscarItem(String nombre){
+        for (int i = 0; i < itemCount; i++){
+            if (inventory[i].equalsIgnoreCase(nombre)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static boolean tieneItem(String nombre){
+        return buscarItem(nombre) != -1;
+    }
+    // Quita el objeto del inventario. Devuelve true si lo había
+    public static boolean usarItem(String nombre){
+        int pos = buscarItem(nombre);
+        if (pos == -1){
+            return false;
+        }
+        // desplaza los siguientes una posición a la izquierda para no dejar huecos
+        for (int i = pos; i < itemCount - 1; i++){
+            inventory[i] = inventory[i + 1];
+        }
+        inventory[itemCount - 1] = null;
+        itemCount--;
+        return true;
+    }
+
 
 }

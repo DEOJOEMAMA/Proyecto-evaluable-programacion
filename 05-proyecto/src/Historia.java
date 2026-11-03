@@ -10,7 +10,7 @@ public class Historia {
                 " cementerio de cenizas y radiación. Bienvenido al Yermo.");
 
         System.out.println();
-        VidaYpersonaje.ini();
+        VidaYPersonaje.ini();
 
         System.out.println("Independientemente de si saliste del búnker o de las cenizas del desierto, " +
                 "\ntus pasos te conducen a unos viejos contenedores militares medio enterrados. Es momento de investigar el terreno.");
@@ -41,17 +41,21 @@ public class Historia {
 
             if (ganado == true) {
 
+                System.out.println("\nDetras de la puerta parece haber algo\n");
+
+                Combate.cbt();
+
+                ItemsYcajas.itemCurar.cur();
                 return;
 
             }else if (ganado!=true){
 
-                System.out.println("Te has electrocutado, pierdes 10pv");
-                SistemaVida.vida-=10;
+                System.out.println("Te has electrocutado");
+                VidaYPersonaje.recibirDano(10);
 
             }
 
         }
-
     }
 
 

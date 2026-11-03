@@ -1,7 +1,56 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Eleccion {
     public static Scanner sc = new Scanner(System.in);
+
+    public static void elij(){
+        Scanner sc = new Scanner(System.in);
+        Random rdr = new Random();
+
+        System.out.println("--- Quieres buscar por items en la zona? --- ");
+
+        System.out.println("1.Si ");
+        System.out.println("2.No");
+
+        while (true) {
+
+            System.out.print("-->");
+            String rest = sc.next();
+
+            if (rest.equalsIgnoreCase("si") || rest.equalsIgnoreCase("1")) {
+
+                int n = rdr.nextInt(1, 5);
+
+                if (n <= 2) {
+
+                    System.out.println("\nTe encuentras un estimulante\n");
+
+                    Inventario.itemsToInv("Estimulante");
+
+                    return;
+                } else if (n > 3) {
+
+                    System.out.println("\nNo has encontrado nada\n");
+
+                    return;
+                }
+
+            }else if(rest.equalsIgnoreCase("no") || rest.equalsIgnoreCase("2")){
+
+                return;
+
+            }else if(!rest.equalsIgnoreCase("no") || !rest.equalsIgnoreCase("si")
+                    || !rest.equalsIgnoreCase("1") || !rest.equalsIgnoreCase("2")){
+
+                System.out.println("Esa opción no esta disponible, introduzca el número  de nuevo");
+
+            }
+
+        }
+
+    }
+
     public static void elij1(){
 
 
@@ -46,15 +95,14 @@ public class Eleccion {
             if (puert==1){
 
                 System.out.println("Te haces daño al intentar abrirlo por la fuerza");
-                SistemaVida.vida -=3;
-                System.out.println(SistemaVida.vida+"pv");
-
+                VidaYPersonaje.recibirDano(3);
 
                 return;
 
             }else if (puert==2){
 
                 Historia.escExt();
+
 
                 return;
             }
