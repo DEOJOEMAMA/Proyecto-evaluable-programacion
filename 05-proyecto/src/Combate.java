@@ -69,10 +69,20 @@ public class Combate {
         boolean accionPC = false;
         int accionE = 0;
         int enemigoMaxHp = 100;
-        int enemigoHp = enemigoMaxHp;
+        int enemigoHp = 0;
         int armaElegida = 0;
 
         enemigoN = rnd.nextInt(3);
+        if (enemigoN == 0){
+            enemigoMaxHp = 85;
+            enemigoHp = enemigoMaxHp;
+        } else if (enemigoN == 1) {
+            enemigoMaxHp = 80;
+            enemigoHp = enemigoMaxHp;
+        }else {
+            enemigoMaxHp = 120;
+            enemigoHp = enemigoMaxHp;
+        }
 
         String enemigo = enemigosL[enemigoN];
 
