@@ -111,14 +111,14 @@ public class Combate {
                 }
                 if (accionP == 1) {
                     armaElegida = elegirArma(sc);
-                        if (armaElegida == -1) {
-                            continue; // volvió atrás
-                        }
-                        // necesita el cartucho en la mochila, pero no se gasta
-                        if (!municionArma[armaElegida].isEmpty() && !Inventario.tieneItem(municionArma[armaElegida])) {
-                            System.out.println("No tienes " + municionArma[armaElegida] + " para esa arma.");
-                            continue; // vuelve al menú sin gastar turno//
-                        }
+                    if (armaElegida == -1) {
+                        continue; // volvió atrás
+                    }
+                    // necesita el cartucho en la mochila, pero no se gasta
+                    if (!municionArma[armaElegida].isEmpty() && !Inventario.tieneItem(municionArma[armaElegida])) {
+                        System.out.println("No tienes " + municionArma[armaElegida] + " para esa arma.");
+                        continue; // vuelve al menú sin gastar turno//
+                    }
                     accionPC = true;
                 } else if (accionP == 2) {
 

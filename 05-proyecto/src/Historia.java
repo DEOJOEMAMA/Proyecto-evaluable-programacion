@@ -6,20 +6,20 @@ public class Historia {
         System.out.println("              UNA HISTORIA BASADA EN FALLOUT             ");
         System.out.println("==========================================================");
 
-        System.out.println("La guerra... la guerra nunca cambia. El fuego atómico arrasó el mundo, convirtiéndolo en un" +
+        Delay.imprimeConDelay("La guerra... la guerra nunca cambia. El fuego atómico arrasó el mundo, convirtiéndolo en un" +
                 " cementerio de cenizas y radiación. Bienvenido al Yermo.");
 
         System.out.println();
         VidaYPersonaje.ini();
 
-        System.out.println("Independientemente de si saliste del búnker o de las cenizas del desierto, " +
+        Delay.imprimeConDelay("Independientemente de si saliste del búnker o de las cenizas del desierto, " +
                 "\ntus pasos te conducen a unos viejos contenedores militares medio enterrados. Es momento de investigar el terreno.");
 
         System.out.println();
 
         Eleccion.elij1();
 
-        System.out.println("\nLlegas a las puertas de un antiguo complejo tecnológico militar sellado a cal y canto. El paso está completamente bloqueado.\n");
+        Delay.imprimeConDelay("\nLlegas a las puertas de un antiguo complejo tecnológico militar sellado a cal y canto. El paso está completamente bloqueado.\n");
 
         Eleccion.elij2();
 
@@ -31,17 +31,17 @@ public class Historia {
 
     public static void escExt(){
 
-        System.out.println("\nTe apartas de la pesada puerta blindada y bordeas los muros de hormigón agrietado del complejo militar. " +
+        Delay.imprimeConDelay("\nTe apartas de la pesada puerta blindada y bordeas los muros de hormigón agrietado del complejo militar. " +
                 "\nEntre matorrales secos y cables colgando, localizas una vieja caja de conexiones de Vault-Tech cubierta de óxido y polvo radiactivo.");
 
-        System.out.println("\n--- HACKING DE PUERTA --- \n");
+        Delay.imprimeConDelay("\n--- HACKING DE PUERTA --- \n");
 
         while (true) {
             boolean ganado = Ahorcado.jugarAhorcado();
 
             if (ganado == true) {
 
-                System.out.println("\nDetras de la puerta parece haber algo\n");
+                Delay.imprimeConDelay("\nDetras de la puerta parece haber algo\n");
 
                 Combate.cbt();
 
@@ -50,7 +50,7 @@ public class Historia {
 
             }else if (ganado!=true){
 
-                System.out.println("Te has electrocutado");
+                Delay.imprimeConDelay("Te has electrocutado");
                 VidaYPersonaje.recibirDano(10);
 
             }
