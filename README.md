@@ -21,12 +21,13 @@ Nuestro juego consiste en una aventura narrativa con interacciones donde el juga
 * Elección de raza (completado)
 * Sistema de vida (completado)
 * Si eliges una opción no declarada te permite volver a elegir
+* Sistema Combate (Completado)
+* Sistema de curación (Completado)
 
 ----
 
 ## Por hacer
 * Historia
-* Sistema de combate
 * Facciones
 
   
