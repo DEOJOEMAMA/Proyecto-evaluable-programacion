@@ -29,5 +29,5 @@ Nuestro juego consiste en una aventura narrativa con interacciones donde el juga
 
 ## Por hacer
 * Historia
-
+* Habitaciones
   
