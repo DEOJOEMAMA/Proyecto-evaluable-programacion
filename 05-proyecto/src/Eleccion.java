@@ -108,8 +108,11 @@ public class Eleccion {
             }
 
         }
-            public static void facciones(){
-        System.out.println("Tienes que elegir una de las siguientes opcines 1/2/3");
+        
+    }
+
+    public static void facciones(){
+        System.out.println("\n--- Tienes que elegir una de las siguientes opcines 1/2/3 ---");
         System.out.println("1. Unirse a la hemandad del acero.");
         System.out.println("2. Unirse a la legión de cesar");
         System.out.println("3. Mantenerse como bandido.");
@@ -128,14 +131,5 @@ public class Eleccion {
 
         }
     }
-
-
-
-
-
-
-    }
-
-
 
 }
