@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ItemsYcajas {
 
     public static String[] items = {"Rifle de palanca", "Pistola Chatarra", "M16", "AK74", "Palanca", "Cuchillo", "Lanza",
-                "Fusion Core", "Balas pistola", "Balas rifle", "Enemigo", "Servo Armadura"}; // CREO UNA VARIABLE DE CLASE STRING[] PARA QUE PUEDA FUNCIONAR DENTRO
+                "Fusion Core", "Balas pistola", "Balas rifle", "Estimulante","Vendaje", "Enemigo", "Servo Armadura"}; // CREO UNA VARIABLE DE CLASE STRING[] PARA QUE PUEDA FUNCIONAR DENTRO
                                                                                             // EN LAS OTRAS DOS FUNCIONES
 
     //EXCLUIR AL INVESTIGAR CAJAS O ARMARIOS, NO ES POSIBLE ENCONTRAR UNA SERVOARMADURA EN UNA CAJA
@@ -20,12 +20,12 @@ public class ItemsYcajas {
         Random rdm = new Random();
 
         int randCaj = rdm.nextInt(3);
-        int rand = rdm.nextInt(11); // NÚMERO RANDOM HASTA EL 11
+        int rand = rdm.nextInt(13); // NÚMERO RANDOM HASTA EL 11
 
 
         if (randCaj!=2){
 
-            if(rand == 10){ // EL IF COMBPRUEBA QUE LA VARIABLE RAND SAQUE UN 10 PARA QUE INICIE EL COMBATE CON EL ENEMIGO
+            if(rand == 12){ // EL IF COMBPRUEBA QUE LA VARIABLE RAND SAQUE UN 10 PARA QUE INICIE EL COMBATE CON EL ENEMIGO
 
                 System.out.println( "¡Ha aparecido un" + items[10] + "!"+ " ¡Te ves envuelto en un combate!\n");
 
@@ -46,7 +46,7 @@ public class ItemsYcajas {
 
             if(ganado==true){
 
-                int rng = rdm.nextInt(10);
+                int rng = rdm.nextInt(12);
 
                     String itemencontrado = items[rng];
 
