@@ -23,11 +23,11 @@ Nuestro juego consiste en una aventura narrativa con interacciones donde el juga
 * Si eliges una opción no declarada te permite volver a elegir
 * Sistema Combate (Completado)
 * Sistema de curación (Completado)
+* Facciones (Completado)
 
 ----
 
 ## Por hacer
 * Historia
-* Facciones
 
   
