@@ -11,9 +11,9 @@ public class Eleccion {
         while (true) {
             System.out.println("--- Quieres buscar por items en la zona? --- ");
 
-            System.out.println("1.Si ");
-            System.out.println("2.No");
-            System.out.println("3. Mostrar Inventario");
+            Delay.imprimeConDelay("1.Si ");
+            Delay.imprimeConDelay("2.No");
+            Delay.imprimeConDelay("3. Mostrar Inventario");
 
             System.out.print("-->");
             String rest = sc.next();
@@ -24,14 +24,14 @@ public class Eleccion {
 
                 if (n <= 2) {
 
-                    System.out.println("\nTe encuentras un estimulante\n");
+                    Delay.imprimeConDelay("\nTe encuentras un estimulante\n");
 
                     Inventario.itemsToInv("Estimulante");
 
                     return;
                 } else if (n > 3) {
 
-                    System.out.println("\nNo has encontrado nada\n");
+                    Delay.imprimeConDelay("\nNo has encontrado nada\n");
 
                     return;
                 }
@@ -43,7 +43,7 @@ public class Eleccion {
             }else if (rest.equalsIgnoreCase("3")){
                 Inventario.mostrarInv();
             } else{
-                System.out.println("Esa opción no esta disponible, introduzca el número  de nuevo");
+                Delay.imprimeConDelay("Esa opción no esta disponible, introduzca el número  de nuevo");
             }
         }
     }
@@ -55,10 +55,10 @@ public class Eleccion {
 
         while (true){
 
-            System.out.println("\n¿Qué deseas hacer? 1/2");
-            System.out.println("1. Buscar a fondo en las cajas metálicas.");
-            System.out.println("2. Ignorar los contenedores y seguir avanzando hacia el complejo abandonado.");
-            System.out.println("3. Mostrar Inventario");
+            Delay.imprimeConDelay("\n¿Qué deseas hacer? 1/2");
+            Delay.imprimeConDelay("1. Buscar a fondo en las cajas metálicas.");
+            Delay.imprimeConDelay("2. Ignorar los contenedores y seguir avanzando hacia el complejo abandonado.");
+            Delay.imprimeConDelay("3. Mostrar Inventario");
 
             int caj = sc.nextInt();
 
@@ -69,12 +69,12 @@ public class Eleccion {
 
             }else if(caj == 2){
 
-                System.out.println("Decides dejar atras los contenedores y sigues avanzando hacia el complejo abandonado");
+                Delay.imprimeConDelay("Decides dejar atras los contenedores y sigues avanzando hacia el complejo abandonado");
                 return;
             } else if (caj ==3) {
                 Inventario.mostrarInv();
             }else {
-                System.out.println("Esa elección no está disponible, escriba 1 o 2 para elegir");
+                Delay.imprimeConDelay("Esa elección no está disponible, escriba 1 o 2 para elegir");
             }
         }
     }
@@ -85,16 +85,16 @@ public class Eleccion {
 
         while (true){
 
-            System.out.println("\n¿Qué deseas hacer? 1/2");
-            System.out.println("1. Intentar forzar la puerta principal con fuerza bruta.");
-            System.out.println("2. Buscar un panel de control o acceso alternativo alrededor del complejo.\n");
-            System.out.println("3. Mostrar Inventario");
+            Delay.imprimeConDelay("\n¿Qué deseas hacer? 1/2");
+            Delay.imprimeConDelay("1. Intentar forzar la puerta principal con fuerza bruta.");
+            Delay.imprimeConDelay("2. Buscar un panel de control o acceso alternativo alrededor del complejo.\n");
+            Delay.imprimeConDelay("3. Mostrar Inventario");
 
             int puert = sc.nextInt();
 
             if (puert==1){
 
-                System.out.println("Te haces daño al intentar abrirlo por la fuerza");
+                Delay.imprimeConDelay("Te haces daño al intentar abrirlo por la fuerza");
                 VidaYPersonaje.recibirDano(3);
 
                 return;
