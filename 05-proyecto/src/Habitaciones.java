@@ -1,4 +1,4 @@
-import java.sql.SQLOutput;
+
 import java.util.Random;
 import java.util.Scanner;
 import java.util.InputMismatchException;
@@ -19,6 +19,8 @@ public class Habitaciones {
    }
     public static void habitacion1() {
         int contadorInvest = 0;
+        int contadoInvest2 = 0;
+        int contadorEntrada = 0;
         int rand = r.nextInt(2);
         if (rand == 0) {
             System.out.println("No encuntas nada por el camino");
@@ -45,54 +47,64 @@ public class Habitaciones {
 
             }
             System.out.println("Lo unico que encuentras a primera vista es una puerta que parece estar cerrada, que quieres hacer");
-            int a = sc.nextInt();
             while(true) {
                 System.out.println("1. Tratar de abrir la puerta");
                 System.out.println("2. Investigar");
                 System.out.println("3. Salir de la casa");
+                int a = 0;
+                try {
+                    a = sc.nextInt();
+                }catch(InputMismatchException e) {
+                    sc.nextLine();
+                    System.out.println("Por favor ingrese un numero del 1 al 3");
+                }
 
                 if (a > 3) {
-                    System.out.println("Porfavor di un numero del 1 al 3");
+                    System.out.println("Porfavor ingresa un numero del 1 al 3");
 
                 }
-                if (a == 1) {
+                if (a == 1 && contadorEntrada>0) {
+                    System.out.println("No hay nada mas que hacer dentro");
+                } else if (a == 1) {
                     boolean ganar = Ahorcado.jugarAhorcado();
                     if (ganar) {
                         System.out.println("Consiges abrir la puerta");
                         ItemsYcajas.cajas();
-                        System.out.println("Vuelves a la sala inicial");
-                        break;
+                        contadorEntrada++;
+                        while (true) {
+                            System.out.println("1. salir del cuarto");
+                            System.out.println("2. Investigar");
+                            int elij2 = 0;
+                            try {
+                                elij2 = sc.nextInt();
+                            }catch(InputMismatchException e) {
+                                sc.nextLine();
+                                System.out.println("Por favor ingrese un numero del 1 al 2");
+                            }
+                            if (elij2 > 2) {
+                                System.out.println("Por favor ingresa un numero del 1 al 2");
+                            }
+                            if (elij2 == 1) {
+                                System.out.println("Sales del cuarto");
+                                break;
+                            }else if (elij2 == 2&& contadoInvest2 >0) {
+                                System.out.println("Ya has investigado aqui");
+                            }else if (elij2 == 2) {
+                                Eleccion.elij();
+                                contadoInvest2++;
+                            }
+                        }
                     }
-                } else if (a == 2) {
+                } else if (a == 2 && contadorInvest >0) {
+                    System.out.println("Ya has investigado aqui");
+                }else if (a == 2) {
                     Eleccion.elij();
                     contadorInvest++;
-                    break;
-                } else if (a == 3) {
+                }else if (a == 3) {
                     System.out.println("Sales de la casa y prosigues con tu camino");
                     return;
                 }
             }
-
-             while (true){
-                 System.out.println("1. Investigar");
-                 System.out.println("2. Salir de la casa");
-                 int b = sc.nextInt();
-                if (b > 3) {
-                    System.out.println("Porfavor di un numero del 1 al 3");
-                }
-                if (b == 1) {
-                    if(contadorInvest == 0) {
-                        Eleccion.elij();
-                        contadorInvest++;
-                    }else{
-                        System.out.println("Ya has investigado aqui");
-                    }
-                } else if (b == 2) {
-                    System.out.println("Sales de la casa y prosigues con tu camino");
-                    return;
-                }
-            }
-
         }
     }
         public static void en () {
@@ -106,6 +118,7 @@ public class Habitaciones {
 
     public static void casino(){
         int rand = r.nextInt(2);
+        int a = 0;
         if (rand == 0) {
             System.out.println("No encuntas nada por el camino");
             return;
@@ -134,13 +147,32 @@ public class Habitaciones {
             System.out.println("1. Jugar black jack");
             System.out.println("2. Jugar a la ruleta");
             System.out.println("3. Salir del casino");
-            int a =sc.nextInt();
+            try {
+                a = sc.nextInt();
+            }catch(InputMismatchException e) {
+                sc.nextLine();
+                System.out.println("Por favor ingrese un numero del 1 al 3");
+            }
             if (a >3) {
-                System.out.println("Porfavor di un numero del 1 al 3");
+                System.out.println("Por favor ingresa un numero del 1 al 3");
             }
             if (a == 1) {
                 System.out.println("Vas a jugar al black jack");
                     Blackjack.bj();
+                while (true) {
+                    System.out.println("¿Quieres seguir jugando?");
+                    System.out.println("1. Sí");
+                    System.out.println("2. No");
+                    String elij = sc.next();
+                    if (elij.equalsIgnoreCase("1") || elij.equalsIgnoreCase("si")) {
+                        Blackjack.bj();
+
+                    } else if (elij.equalsIgnoreCase("2") || elij.equalsIgnoreCase("no")){
+                        break;
+
+                    }
+
+                }
 
             }else if (a == 2) {
                 System.out.println("Vas a jugar a la ruleta");
@@ -152,33 +184,85 @@ public class Habitaciones {
         }
 
     }
-    public static void apostar(){
+    public static String apostar(){
+       int eleccion = 0;
+       int vuletas = 0;
+       String[] itemApost = {"Estimulante"};
+        int j = 0;
+       for(int i = 0; i < itemApost.length; i++){
+           if(Inventario.tieneItem(itemApost[i])){
+               System.out.println("Puedes apostar los siguientes items");
+               j++;
+           }else if(Inventario.buscarItem(itemApost[i]) == -1){
+           }
+           if (j == 0) {
+               System.out.println("No tienes items para apostar");
+               return null;
+           }
+           while (true) {
+               vuletas++;
+               System.out.println("1. Estimulante");
+               System.out.println("2. No apostar");
+               try {
+                   eleccion = sc.nextInt();
+               }catch(InputMismatchException e) {
+                   sc.nextLine();
+                   System.out.println("Por favor ingrese un numero del 1 al 2");
+               }
+               eleccion--;
+               if (vuletas > 1) {
+                   return itemApost[eleccion];
+               }
+               if (eleccion > 1) {
+                   System.out.println("Por favor ingresa un numero del 1 al 2");
+               } else if (eleccion == 0 && Inventario.tieneItem("Estimulante")) {
+                   System.out.println("Apuestas un Estimulante");
+                   Inventario.usarItem(itemApost[eleccion]);
+                   break;
+
+               } else if (eleccion == 1) {
+                   System.out.println("No apostar");
+                   return null;
+               }
+           }
+       }
+       return itemApost[eleccion];
+
 
     }
     public static void ruleta(){
-       int eleccion;
+       int elecc = 0;
        int numero = r.nextInt(37);
+       String guardoElecc = apostar();
+       if(guardoElecc == null){
+           return;
+       }
         System.out.println("A que quieres apostar");
         while (true) {
             System.out.println("1. Rojo");
             System.out.println("2. Negro");
             System.out.println("3. Al 0");
             System.out.println("4. Salir de la ruleta");
-            eleccion = sc.nextInt();
-            if(eleccion>4){
-                System.out.println("Porfavor di un numero del 1 al 4");
+            try {
+                elecc = sc.nextInt();
+            }catch(InputMismatchException e) {
+                sc.nextLine();
+                System.out.println("Por favor ingrese un numero del 1 al 4");
             }
-            if (eleccion == 1) {
+            if(elecc>4){
+                System.out.println("Por favor di un numero del 1 al 4");
+            }
+            if (elecc == 1) {
                 System.out.println("Vas a rojo");
                 break;
-            } else if (eleccion == 2) {
+            } else if (elecc == 2) {
                 System.out.println("Vas a negro");
                 break;
 
-            }else if (eleccion == 3) {
+            }else if (elecc == 3) {
                 System.out.println("Vas a 0");
                 break;
-            }else if (eleccion == 4) {
+            }else if (elecc == 4) {
                 System.out.println("Salir de la ruleta");
                 return;
             }
@@ -187,11 +271,14 @@ public class Habitaciones {
         for (int i = 0; i < negro.length; i++) {
             if (negro[i] == numero) {
                 System.out.println("Es negro");
-                if (eleccion == 1) {
+                if (elecc == 1) {
                     System.out.println("Has perdido");
-                } else if (eleccion == 2) {
+                } else if (elecc == 2) {
                     System.out.println("Has ganado");
-                }else if (eleccion == 3) {
+                    Inventario.itemsToInv(guardoElecc);
+                    Inventario.itemsToInv(guardoElecc);
+                    System.out.println("Recibes 2 "+ guardoElecc);
+                }else if (elecc == 3) {
                     System.out.println("Has perdido");
                 }
                 break;
@@ -200,11 +287,14 @@ public class Habitaciones {
         for (int i = 0; i < rojo.length; i++) {
             if (rojo[i] == numero) {
                 System.out.println("Es rojo");
-                if (eleccion == 1) {
+                if (elecc == 1) {
                     System.out.println("Has ganado");
-                } else if (eleccion == 2) {
+                    Inventario.itemsToInv(guardoElecc);
+                    Inventario.itemsToInv(guardoElecc);
+                    System.out.println("Recibes 2 "+ guardoElecc);
+                } else if (elecc == 2) {
                     System.out.println("Has perdido");
-                }else if (eleccion == 3) {
+                }else if (elecc == 3) {
                     System.out.println("Has perdido");
                 }
                 break;
@@ -212,18 +302,22 @@ public class Habitaciones {
         }
         if (numero == 0) {
             System.out.println("Es 0");
-            if (eleccion == 1) {
+            if (elecc == 1) {
                 System.out.println("Has perdido");
-            } else if (eleccion == 2) {
+            } else if (elecc == 2) {
                 System.out.println("Has perdido");
-            }else if (eleccion == 3) {
+            }else if (elecc == 3) {
                 System.out.println("Has ganado");
+                Inventario.itemsToInv(guardoElecc);
+                Inventario.itemsToInv(guardoElecc);
+                System.out.println("Recibes 2 "+ guardoElecc);
             }
         }
-        System.out.println("¿Quieres seguir jugando?");
-        System.out.println("1. Sí");
-        System.out.println("2. No");
+
         while (true) {
+            System.out.println("¿Quieres seguir jugando?");
+            System.out.println("1. Sí");
+            System.out.println("2. No");
 
             String elij = sc.next();
             if (elij.equalsIgnoreCase("1") || elij.equalsIgnoreCase("si")) {
@@ -237,13 +331,8 @@ public class Habitaciones {
         }
 
     }
-    public static void habitacion2(){
-
-    }
     public class Blackjack {
-        public static void main(String[] args) {
-            bj();
-        }
+
         public static void barajar(int[] array){
             Random rnd = new Random();
             int longitud = array.length;
@@ -272,7 +361,11 @@ public class Habitaciones {
             }
             return suma;
         }
-        public static int bj() {
+        public static void bj() {
+            String guardElecc = apostar();
+            if(guardElecc == null){
+                return;
+            }
             Scanner sc = new Scanner(System.in);
             int J = 10;
             int Q = 10;
@@ -295,7 +388,7 @@ public class Habitaciones {
                     A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K,
                     A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K,};
             barajar(baraja);
-
+            apostar();
             TextoMod.imprimirConDelay("-------------",TextoMod.rojo, 50);
             TextoMod.imprimirConDelay("--Blackjack--",TextoMod.rojo, 50);
             TextoMod.imprimirConDelay("-------------",TextoMod.rojo, 50);
@@ -357,7 +450,7 @@ public class Habitaciones {
             }
             if (sumaJ > 21){
                 TextoMod.imprimirConDelay("Perdiste, te pasaste de 21.",TextoMod.morado, 50);
-                ganar = 1;
+                return;
             }
             while (turnoC == false){
                 if (sumaJ>sumaC){
@@ -378,24 +471,115 @@ public class Habitaciones {
                 }
             }
             if (sumaC > 21) {
-                TextoMod.imprimirConDelay("Ganaste, la casa se paso de 21." + sumaC,TextoMod.verde, 50);
-                ganar = 2;
-                return ganar;
-            }
-            if (sumaJ > sumaC){
+                TextoMod.imprimirConDelay("Ganaste, la casa se paso de 21 sacando " + sumaC, TextoMod.verde, 50);
+                Inventario.itemToInv(guardElecc);
+                Inventario.itemToInv(guardElecc);
+                System.out.println("Has recivido 2 " + guardElecc);
+
+            }else if (sumaJ > sumaC){
                 TextoMod.imprimirConDelay("Ganaste",TextoMod.verde, 50);
                 System.out.println(sumaJ+" > "+sumaC);
-                ganar = 2;
+                Inventario.itemToInv(guardElecc);
+                Inventario.itemToInv(guardElecc);
+                System.out.println("Has recivido 2 "+guardElecc);
             } else if (sumaC > sumaJ) {
                 TextoMod.imprimirConDelay("Perdiste",TextoMod.morado, 50);
                 System.out.println(sumaJ+" < "+sumaC);
-                ganar = 1;
             } else if (sumaC == sumaJ) {
                 TextoMod.imprimirConDelay("Empataste",TextoMod.amarillo, 50);
                 System.out.println(sumaJ+" = "+sumaC);
-                ganar = 3;
             }
-            return ganar;
+
         }
+    }
+    public static void habitacion2(){
+        int rand = r.nextInt(2);
+        if (rand == 0) {
+            System.out.println("No encuntas nada por el camino");
+            return;
+        } else {
+            System.out.println("Te encuentra una casa por el camino\n" +
+                    "¿quieres entrar?");
+            while (true) {
+                System.out.println("1. Sí");
+                System.out.println("2. No");
+                String elij = sc.next();
+
+                if (elij.equalsIgnoreCase("1") || elij.equalsIgnoreCase("si")) {
+
+                    System.out.println("Entras en la casa");
+                    en();
+                    break;
+
+                } else if (elij.equalsIgnoreCase("2") || elij.equalsIgnoreCase("no")) {
+                    return;
+
+                }
+            }
+        }
+        System.out.println("Al entrar a la casa lo unico que resaltan son unas escaleras para subir arriva.\n" +
+                "No hay puertas, solo una escalera ¿Que quieres hacer?");
+        int elij = 0;
+        int elij2 = 0;
+        int contInv = 0;
+        int contInv2 = 0;
+        int contSubi = 0;
+        while(true){
+            System.out.println("1. Subir las escaleras");
+            System.out.println("2. Investigar ");
+            System.out.println("3. Salir");
+
+            try{
+                elij = sc.nextInt();
+
+            }catch(InputMismatchException e){
+                sc.nextLine();
+                System.out.println("Por favor ingrese un numero del 1 al 3");
+            }
+            if (elij > 3) {
+                System.out.println("Por favor ingresa un numero del 1 al 3");
+            }
+            if(elij == 1 && contSubi>0){
+                System.out.println("No hay nada mas que hacer arriva");
+            }else if (elij == 1){
+                System.out.println("Subes las escaleras");
+                en();
+                System.out.println("No encuentras nada al subir las escaleras, es un lugar decepcionante");
+                contSubi++;
+                while (true) {
+                    System.out.println("1. Bajar");
+                    System.out.println("2. Investigar");
+                    try {
+                         elij2 = sc.nextInt();
+                    }catch(InputMismatchException e){
+                    sc.nextLine();
+                    System.out.println("Por favor ingrese un numero del 1 al 2");
+                }
+                    if (elij2 > 2) {
+                        System.out.println("Por favor di un numero del 1 al 2");
+                    }
+                    if (elij2 == 1) {
+                        System.out.println("Vuelves abajo");
+                        break;
+                    } else if (elij2 == 2 && contInv2 > 0) {
+                        System.out.println("Ya has investigado aquí");
+                    } else if (elij2 == 2) {
+                        Eleccion.elij();
+                        contInv2++;
+                    }
+                }
+            }else if (elij == 2 && contInv>0){
+                System.out.println("Ya has investigado aquí");
+            } else if (elij == 2) {
+                Eleccion.elij();
+                contInv++;
+
+            }else if (elij == 3) {
+                System.out.println("Sales de la casa y prosigues con tu camino");
+                return;
+
+            }
+        }
+
     }
 }
