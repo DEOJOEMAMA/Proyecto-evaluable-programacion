@@ -1,0 +1,97 @@
+import java.util.InputMismatchException;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Ruleta {
+    public static void main(String[] args) {
+        ruleta();
+    }
+
+    public static int[] negro = {2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35};
+    public static int[] rojo = {1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36};
+
+    public static int ruleta() {
+        Scanner sc = new Scanner(System.in);
+        Random r = new Random();
+        int ganar = 0;
+        int elecc = 0;
+        int numero = r.nextInt(37);
+        System.out.println("A que quieres apostar");
+        while (true) {
+            System.out.println("1. Rojo");
+            System.out.println("2. Negro");
+            System.out.println("3. Al 0");
+            System.out.println("4. Salir de la ruleta");
+            try {
+                elecc = sc.nextInt();
+            } catch (InputMismatchException e) {
+                sc.nextLine();
+                System.out.println("Por favor ingrese un numero del 1 al 4");
+            }
+            if (elecc > 4) {
+                System.out.println("Por favor di un numero del 1 al 4");
+            }
+            if (elecc == 1) {
+                System.out.println("Vas a rojo");
+                break;
+            } else if (elecc == 2) {
+                System.out.println("Vas a negro");
+                break;
+
+            } else if (elecc == 3) {
+                System.out.println("Vas a 0");
+                break;
+            } else if (elecc == 4) {
+                System.out.println("Salir de la ruleta");
+                return ganar;
+            }
+        }
+
+        for (int i = 0; i < negro.length; i++) {
+            if (negro[i] == numero) {
+                System.out.println("Es negro");
+                if (elecc == 1) {
+                    System.out.println("Has perdido");
+                    ganar = 1;
+                } else if (elecc == 2) {
+                    System.out.println("Has ganado");
+                    ganar = 2;
+                } else if (elecc == 3) {
+                    System.out.println("Has perdido");
+                    ganar = 1;
+                }
+                break;
+            }
+        }
+        for (int i = 0; i < rojo.length; i++) {
+            if (rojo[i] == numero) {
+                System.out.println("Es rojo");
+                if (elecc == 1) {
+                    System.out.println("Has ganado");
+                    ganar = 2;
+                } else if (elecc == 2) {
+                    System.out.println("Has perdido");
+                    ganar = 1;
+                } else if (elecc == 3) {
+                    System.out.println("Has perdido");
+                    ganar = 1;
+                }
+                break;
+            }
+        }
+        if (numero == 0) {
+            System.out.println("Es 0");
+            if (elecc == 1) {
+                System.out.println("Has perdido");
+                ganar = 1;
+            } else if (elecc == 2) {
+                System.out.println("Has perdido");
+                ganar = 1;
+            } else if (elecc == 3) {
+                System.out.println("Has ganado");
+                ganar = 2;
+            }
+        }
+        return ganar;
+    }
+}
