@@ -4,28 +4,38 @@ import java.util.Scanner;
 
 public class Combate {
 
-    public static String[] armas =        {"Pistola Chatarra", "Rifle de palanca", "M16",         "AK74",         "Palanca", "Cuchillo", "Lanza", "Puños"};
-    public static String[] municionArma = {"Balas pistola",    "Balas rifle",      "Balas rifle", "Balas rifle",  "",        "",         "",      ""};
-    public static int[] danoArma =        {20,                 35,                 30,            30,             15,        12,         18,      5};
+    public static String[][] catalogoArmas = {
+            // { Nombre del arma, Munición necesaria }
+            {"Pistola Chatarra", "Balas pistola"},
+            {"Rifle de palanca", "Balas rifle"},
+            {"M16", "Balas rifle"},
+            {"AK74", "Balas rifle"},
+            {"Palanca", ""},
+            {"Cuchillo", ""},
+            {"Lanza", ""},
+            {"Puños", ""}
+    };
+
+    public static int[] danoArma = {20, 35, 30, 30, 15, 12, 18, 5};
 
     public static int elegirArma(Scanner sc) {
-        int[] disponibles = new int[armas.length];
+        int[] disponibles = new int[catalogoArmas.length];
         int n = 0;
 
-        for (int i = 0; i < armas.length; i++) {
-            if (armas[i].equals("Puños") || Inventario.tieneItem(armas[i])) {
+        for (int i = 0; i < catalogoArmas.length; i++) {
+            if (catalogoArmas[i][0].equals("Puños") || Inventario.tieneItem(catalogoArmas[i][0])) {
                 disponibles[n] = i;
                 n++;
             }
         }
         System.out.println("¿Con qué quieres atacar?");
         for (int j = 0; j < n; j++){
-            int a = disponibles[j];
+            int posArmaDisp = disponibles[j];
             String info = "";
-            if (!municionArma[a].isEmpty() && !Inventario.tieneItem(municionArma[a])){
-                info = " (te faltan " + municionArma[a] + ")";
+            if (!catalogoArmas[posArmaDisp][1].isEmpty() && !Inventario.tieneItem(catalogoArmas[posArmaDisp][1])){
+                info = " (te faltan " + catalogoArmas[posArmaDisp][1] + ")";
             }
-            System.out.println((j + 1) + ". " + armas[a] + info + " - daño " + danoArma[a]);
+            System.out.println((j + 1) + ". " + catalogoArmas[posArmaDisp][0] + info + " - daño " + danoArma[posArmaDisp]);
         }
         System.out.println("0. Volver");
         System.out.print("-->");
@@ -115,8 +125,8 @@ public class Combate {
                         continue; // volvió atrás
                     }
                     // necesita el cartucho en la mochila, pero no se gasta
-                    if (!municionArma[armaElegida].isEmpty() && !Inventario.tieneItem(municionArma[armaElegida])) {
-                        System.out.println("No tienes " + municionArma[armaElegida] + " para esa arma.");
+                    if (!catalogoArmas[armaElegida][1].isEmpty() && !Inventario.tieneItem(catalogoArmas[armaElegida][1])) {
+                        System.out.println("No tienes " + catalogoArmas[armaElegida][1] + " para esa arma.");
                         continue; // vuelve al menú sin gastar turno//
                     }
                     accionPC = true;
