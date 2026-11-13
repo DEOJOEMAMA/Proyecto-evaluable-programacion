@@ -19,8 +19,8 @@ public class Ahorcado {
         palabras[1] = "hola1";
         palabras[2] = "hola2";
 
-        //Elige un número aleatorio del 0 al 2
-        int aleatorio = rnd.nextInt(3);
+        //Elige un número aleatorio hasta el tamaño del array
+        int aleatorio = rnd.nextInt(palabras.length);
         //Con el número aleatorio selecciona la palabra con el número correspondiente
         String palabraElegida = palabras[aleatorio];
         //Convierte la palabra en un array de char
@@ -37,6 +37,7 @@ public class Ahorcado {
         System.out.println("-------------------");
 
         TextoMod.imprimirConDelay("Adivina la palabra!",TextoMod.amarillo, 30);
+        TextoMod.imprimirConDelay("¡¡¡ADVERTENCIA!!! Solo tomara el primer caracter sea una letra o un número", TextoMod.amarillo, 30);
 
 
         //Bucle del juego
