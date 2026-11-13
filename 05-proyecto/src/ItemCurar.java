@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class ItemCurar {
 
-    public static String[] itemcur = {"Carne ratatopo", "Estimulante", "Nuka cola"};
+    public static String[] itemcur = {"Carne ratatopo", "Estimulante", "Nuke cola"};
     public static int[] hp = {5, 90, 20};
 
     public static int elegircur(Scanner sc) {
@@ -17,17 +17,16 @@ public class ItemCurar {
                 disponibles[n] = i;
                 n++;
             }
+        }
+        for (int j = 0; j < n; j++){
+            int a = disponibles[j];
 
-            for (int j = 0; j < n; j++){
-                int a = disponibles[j];
+            String info = "";
 
-                String info = "";
-
-                System.out.println((j + 1) + ". " + itemcur[a] + info +  hp[a]+" + pv ");
-
-            }
+            System.out.println((j + 1) + ". " + itemcur[a] + info +" "+  hp[a]+" pv ");
 
         }
+
         System.out.println("0. Volver");
         System.out.print("-->");
 

@@ -65,7 +65,7 @@ public class Historia {
 
                 Combate.cbt();
 
-                ItemsYcajas.itemCurar.cur();
+                ItemCurar.cur();
                 return;
 
             }else if (ganado!=true){

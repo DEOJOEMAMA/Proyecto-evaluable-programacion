@@ -60,6 +60,7 @@ public class Combate {
         acciones[0] = "Atacar";
         acciones[1] = "Defender";
         acciones[2] = "Huir";
+        acciones[3] = "Curarse";
 
         //Lista de acciones del enemigo
         String accionesE[] = new String[3];
@@ -109,6 +110,7 @@ public class Combate {
                 System.out.println("1. " + acciones[0]);
                 System.out.println("2. " + acciones[1]);
                 System.out.println("3. " + acciones[2]);
+                System.out.println("4. " + acciones[3]);
                 System.out.print("-->");
 
                 try {
@@ -159,6 +161,10 @@ public class Combate {
                         System.out.println("No conseguiste escapar");
                         accionPC = true;
                     }
+                }else if (accionP == 4) {
+
+                    ItemCurar.cur();
+
                 }
             }
             if (accionP == 1) {
@@ -205,10 +211,11 @@ public class Combate {
         Random rnd = new Random();
 
         //Lista de acciones del jugador
-        String acciones[] = new String[3];
+        String acciones[] = new String[4];
         acciones[0] = "Atacar";
         acciones[1] = "Defender";
         acciones[2] = "Huir";
+        acciones[3] = "Curarse";
 
         //Lista de acciones del enemigo
         String accionesE[] = new String[3];
@@ -253,6 +260,7 @@ public class Combate {
                 System.out.println("1. " + acciones[0]);
                 System.out.println("2. " + acciones[1]);
                 System.out.println("3. " + acciones[2]);
+                System.out.println("4. " + acciones[3]);
                 System.out.print("-->");
 
                 try {
@@ -303,6 +311,10 @@ public class Combate {
                         System.out.println("No conseguiste escapar");
                         accionPC = true;
                     }
+                }else if (accionP == 4) {
+
+                    ItemCurar.cur();
+
                 }
             }
             if (accionP == 1) {
