@@ -58,102 +58,98 @@ public class Blackjack {
                 A, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K,};
         barajar(baraja);
 
-        TextoMod.imprimirConDelay("-------------",TextoMod.rojo, 50);
-        TextoMod.imprimirConDelay("--Blackjack--",TextoMod.rojo, 50);
-        TextoMod.imprimirConDelay("-------------",TextoMod.rojo, 50);
+        TextoMod.imprimirConDelay("-------------",TextoMod.rojo, 0);
+        TextoMod.imprimirConDelay("--Blackjack--",TextoMod.rojo, 0);
+        TextoMod.imprimirConDelay("-------------",TextoMod.rojo, 0);
 
-        TextoMod.imprimirConDelay("Obtuviste un: " + baraja[j],TextoMod.verde, 50);
+        TextoMod.imprimirConDelay("Obtuviste un: " + baraja[j],TextoMod.verde, 30);
+        cartasJ[posCartasJ] = baraja[j];
+        posCartasJ++;
+        j++;
+
+        TextoMod.imprimirConDelay("Obtuviste un: " + baraja[j],TextoMod.verde, 30);
         cartasJ[posCartasJ] = baraja[j];
         posCartasJ++;
         sumaJ = calcularSuma(cartasJ, posCartasJ);
         j++;
-        TextoMod.imprimirConDelay("  Sumas: " + sumaJ,TextoMod.verde, 50);
+        TextoMod.imprimirConDelay("  Sumas: " + sumaJ,TextoMod.verde, 30);
 
-        TextoMod.imprimirConDelay("Obtuviste un: " + baraja[j],TextoMod.verde, 50);
-        cartasJ[posCartasJ] = baraja[j];
-        posCartasJ++;
-        sumaJ = calcularSuma(cartasJ, posCartasJ);
+        TextoMod.imprimirConDelay("La casa obtuvo un: " + baraja[j],TextoMod.morado, 30);
+        cartasC[posCartasC] = baraja[j];
+        posCartasC++;
         j++;
-        TextoMod.imprimirConDelay("  Sumas: " + sumaJ,TextoMod.verde, 50);
 
-        TextoMod.imprimirConDelay("La casa obtuvo un: " + baraja[j],TextoMod.morado, 50);
+        TextoMod.imprimirConDelay("La casa obtuvo un: " + baraja[j],TextoMod.morado, 30);
         cartasC[posCartasC] = baraja[j];
         posCartasC++;
         sumaC = calcularSuma(cartasC, posCartasC);
         j++;
-        TextoMod.imprimirConDelay("  La casa suma: " + sumaC,TextoMod.morado, 50);
-
-        TextoMod.imprimirConDelay("La casa obtuvo un: " + baraja[j],TextoMod.morado, 50);
-        cartasC[posCartasC] = baraja[j];
-        posCartasC++;
-        sumaC = calcularSuma(cartasC, posCartasC);
-        j++;
-        TextoMod.imprimirConDelay("  La casa suma: " + sumaC,TextoMod.morado, 50);
+        TextoMod.imprimirConDelay("  La casa suma: " + sumaC,TextoMod.morado, 30);
 
         while (turnoJ == false) {
             System.out.println();
-            TextoMod.imprimirConDelay("Que haras?",TextoMod.blanco, 50);
-            TextoMod.imprimirConDelay("1. Pedir Carta",TextoMod.azul, 50);
-            TextoMod.imprimirConDelay("2. Plantarse",TextoMod.cyan, 50);
-            TextoMod.imprimirConDelay("-->",TextoMod.rojo, 50);
+            TextoMod.imprimirConDelay("Que haras?",TextoMod.blanco, 30);
+            TextoMod.imprimirConDelay("1. Pedir Carta",TextoMod.azul, 30);
+            TextoMod.imprimirConDelay("2. Plantarse",TextoMod.cyan, 30);
+            TextoMod.imprimirConDelay("-->",TextoMod.rojo, 30);
 
             try {
                 accionJ = sc.nextInt();
             } catch (InputMismatchException e) {
-                TextoMod.imprimirConDelay("Eso no es una acción.",TextoMod.amarillo, 50);
+                TextoMod.imprimirConDelay("Eso no es una acción.",TextoMod.amarillo, 30);
                 sc.nextLine();
                 continue; //Vuelve a pedirte una acción
             }
             if (accionJ == 1) {
-                TextoMod.imprimirConDelay("Obtuviste un: " + baraja[j],TextoMod.verde, 50);
+                TextoMod.imprimirConDelay("Obtuviste un: " + baraja[j],TextoMod.verde, 30);
                 cartasJ[posCartasJ] = baraja[j];
                 posCartasJ++;
                 sumaJ = calcularSuma(cartasJ, posCartasJ);
                 j++;
-                TextoMod.imprimirConDelay("  Sumas: " + sumaJ,TextoMod.verde, 50);
+                TextoMod.imprimirConDelay("  Sumas: " + sumaJ,TextoMod.verde, 30);
 
             } else if (accionJ == 2) {
-                TextoMod.imprimirConDelay("  Sumas: " + sumaJ,TextoMod.verde, 50);
+                TextoMod.imprimirConDelay("  Sumas: " + sumaJ,TextoMod.verde, 30);
                 turnoJ = true;
             }
         }
         if (sumaJ > 21){
-            TextoMod.imprimirConDelay("Perdiste, te pasaste de 21.",TextoMod.morado, 50);
+            TextoMod.imprimirConDelay("Perdiste, te pasaste de 21.",TextoMod.morado, 30);
             ganar = 1;
         }
         while (turnoC == false){
             if (sumaJ>sumaC){
                 if (sumaC < 16){
-                    TextoMod.imprimirConDelay("La casa obtuvo un: " + baraja[j],TextoMod.morado, 50);
+                    TextoMod.imprimirConDelay("La casa obtuvo un: " + baraja[j],TextoMod.morado, 30);
                     cartasC[posCartasC] = baraja[j];
                     posCartasC++;
                     sumaC = calcularSuma(cartasC, posCartasC);
                     j++;
-                    TextoMod.imprimirConDelay("  La casa suma: " + sumaC,TextoMod.morado, 50);
+                    TextoMod.imprimirConDelay("  La casa suma: " + sumaC,TextoMod.morado, 30);
                 }else {
-                    TextoMod.imprimirConDelay("  La casa suma: " + sumaC,TextoMod.morado, 50);
+                    TextoMod.imprimirConDelay("  La casa suma: " + sumaC,TextoMod.morado, 30);
                     turnoC = true;
                 }
             }else {
-                TextoMod.imprimirConDelay("  La casa suma: " + sumaC,TextoMod.morado, 50);
+                TextoMod.imprimirConDelay("  La casa suma: " + sumaC,TextoMod.morado, 30);
                 turnoC = true;
             }
         }
         if (sumaC > 21) {
-            TextoMod.imprimirConDelay("Ganaste, la casa se paso de 21." + sumaC,TextoMod.verde, 50);
+            TextoMod.imprimirConDelay("Ganaste, la casa se paso de 21." + sumaC,TextoMod.verde, 30);
             ganar = 2;
             return ganar;
         }
         if (sumaJ > sumaC){
-            TextoMod.imprimirConDelay("Ganaste",TextoMod.verde, 50);
+            TextoMod.imprimirConDelay("Ganaste",TextoMod.verde, 30);
             System.out.println(sumaJ+" > "+sumaC);
             ganar = 2;
         } else if (sumaC > sumaJ) {
-            TextoMod.imprimirConDelay("Perdiste",TextoMod.morado, 50);
+            TextoMod.imprimirConDelay("Perdiste",TextoMod.morado, 30);
             System.out.println(sumaJ+" < "+sumaC);
             ganar = 1;
         } else if (sumaC == sumaJ) {
-            TextoMod.imprimirConDelay("Empataste",TextoMod.amarillo, 50);
+            TextoMod.imprimirConDelay("Empataste",TextoMod.amarillo, 30);
             System.out.println(sumaJ+" = "+sumaC);
             ganar = 3;
         }
