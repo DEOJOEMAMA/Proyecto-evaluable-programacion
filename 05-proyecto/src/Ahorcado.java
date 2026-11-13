@@ -32,21 +32,24 @@ public class Ahorcado {
         for (int i = 0; i < longitud; i++) {
             tusAciertos[i] = '_';
         }
+        System.out.println("------------------");
+        System.out.println("-----Ahorcado-----");
+        System.out.println("-------------------");
 
-        System.out.println("\033[35mAdivina la palabra!\033[34m");
+        TextoMod.imprimirConDelay("Adivina la palabra!",TextoMod.amarillo, 30);
 
 
         //Bucle del juego
         while (fallos < 5 && aciertos < longitud){
 
             //Escribe la palabra en guiones
-            System.out.print("Palabra: ");
+            TextoMod.imprimirConDelay("Palabra: ",TextoMod.azul,0);
             for (int i = 0; i < longitud; i++) {
                 System.out.print(tusAciertos[i] + " ");
             }
             System.out.println(); // Salto de línea
 
-            System.out.print("Introduce una letra: ");
+            TextoMod.imprimirConDelay("Introduce una letra: ", TextoMod.azul, 0);
             respuesta = sc.next().toLowerCase().charAt(0);
 
             boolean letraAcertada = false;
@@ -64,17 +67,17 @@ public class Ahorcado {
             //Comprueba si acertaste o fallaste
             if (letraAcertada == false){
                 fallos++;
-                System.out.println("\033[31m¡Fallaste! Llevas " + fallos + " de 5 fallos.\033[34m");
+                TextoMod.imprimirConDelay("¡Fallaste! Llevas " + fallos + " de 5 fallos.", TextoMod.rojo, 20);
             } else {
-                System.out.println("\033[32m¡Bien! Has acertado una letra.\033[34m");
+                TextoMod.imprimirConDelay("¡Bien! Has acertado una letra.", TextoMod.verde, 20);
             }
         }
         //Comprueba si ganaste o perdiste
         if (aciertos == longitud){
             ganar = true;
-            System.out.println("\033[32m¡Ganaste! la palabra es: "+ palabraElegida);
+            TextoMod.imprimirConDelay("¡Ganaste! la palabra es: "+ palabraElegida, TextoMod.verde, 20);
         } else if (fallos == 5) {
-            System.out.println("\033[31m¡Perdiste! la palabra es: "+ palabraElegida);
+            TextoMod.imprimirConDelay("¡Perdiste! la palabra es: "+ palabraElegida, TextoMod.rojo, 20);
         }
         return ganar;
     }

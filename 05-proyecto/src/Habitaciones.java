@@ -5,13 +5,6 @@ import java.util.InputMismatchException;
 
 
 public class Habitaciones {
-    public static void main(String[] args) {
-        Inventario.itemsToInv("Estimulante");
-        Inventario.itemsToInv("Estimulante");
-        Inventario.itemsToInv("Estimulante");
-        casino();
-        Inventario.mostrarInv();
-    }
     public static boolean apost = false;
    public static Random r = new Random();
    public static Scanner sc = new Scanner(System.in);
