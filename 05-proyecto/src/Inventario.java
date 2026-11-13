@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Inventario {
 
-    public static String[] inventory = new String[10];
+    public static String[] inventory = new String[25];
 
     public static int itemCount=0; //variable de clase
 

@@ -14,7 +14,7 @@ public class Saqueo {
 
         String respuesta = sc.next();
 
-        if (respuesta.equalsIgnoreCase("si")){
+        if (respuesta.equalsIgnoreCase("si") || respuesta.equals("1")){
             ItemsYcajas.cajas();
 
         }

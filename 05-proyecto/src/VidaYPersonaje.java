@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class VidaYPersonaje {
-
+    public static int karma;
     public static int hp;
     public static int hpMax;
     public static boolean servoArmadura = true; // ¿la tienes?
@@ -28,11 +28,11 @@ public class VidaYPersonaje {
 
     public static void ini(){
 
-        Delay.imprimeConDelay("\033[32mAntes de dar tu primer paso en este mundo muerto, debes recordar quién eres y de dónde vienes.\033[32m");
+        TextoMod.imprimirConDelay("\033[32mAntes de dar tu primer paso en este mundo muerto, debes recordar quién eres y de dónde vienes.\033[32m",TextoMod.verde, 10);
         System.out.println();
-        Delay.imprimeConDelay("¿Que quieres ser?");
-        Delay.imprimeConDelay("1. Humano");
-        Delay.imprimeConDelay("2. Mutante");
+        TextoMod.imprimirConDelay("¿Que quieres ser?",TextoMod.verde, 10);
+        TextoMod.imprimirConDelay("1. Humano",TextoMod.verde, 10);
+        TextoMod.imprimirConDelay("2. Mutante",TextoMod.verde, 10);
 
         elecion();
 
@@ -48,24 +48,27 @@ public class VidaYPersonaje {
 
             if (elec.equalsIgnoreCase("humano") || elec.equalsIgnoreCase("1")){
 
-                Delay.imprimeConDelay("\u001B[35mHas elegido ser humano \u001B[35m");
+                TextoMod.imprimirConDelay("Has elegido ser humano ",TextoMod.morado, 10);
                 hp +=100;
                 hpMax = 100;
-                Delay.imprimeConDelay("Tienes " + hp + " / " + hpMax + " HP");
+                TextoMod.imprimirConDelay("Tienes " + hp + " / " + hpMax + " HP",TextoMod.morado, 10);
 
                 System.out.println();
                 System.out.println("\033[32m---- Historia ----\033[32m");
-                Delay.imprimeConDelay("El aire se siente frío, como si te encontrases en un congelador, al mirar a los " +
+                TextoMod.imprimirConDelay("El aire se siente frío, como si te encontrases en un congelador, al mirar a los " +
                         "\nlados te das cuenta que estas dentro de una de las capsula de criogenización dentro de un bunker de Vault-Tech, " +
-                        "\ntras salir explorarías el búnker y encontrarías una pistola chatarra, balas de pistola y un mapa." );
+                        "\ntras salir explorarías el búnker y encontrarías una pistola chatarra, balas de pistola y un mapa." ,TextoMod.azul, 10);
 
                 Inventario.itemsToInv("Pistola Chatarra");
                 Inventario.itemsToInv("Balas pistola");
                 Inventario.itemsToInv("Mapa");
 
                 System.out.println();
-                Delay.imprimeConDelay("Una alarma sorda comienza a sonar en el búnker. Los sellos de la gran puerta acorazada empiezan a girar. " +
-                        "\nEs hora de dar el primer paso hacia lo desconocido.");
+                TextoMod.imprimirConDelay("Una alarma sorda comienza a sonar en el búnker. Los sellos de la gran puerta acorazada empiezan a girar. " +
+                        "\nEs hora de dar el primer paso hacia lo desconocido.",TextoMod.azul, 10);
+
+                TextoMod.imprimirConDelay("Antes de salir ",TextoMod.verde, 10);
+                Eleccion.elij();
                 return;
 
             }else if (elec.equalsIgnoreCase("mutante") || elec.equalsIgnoreCase("2")){
@@ -76,8 +79,8 @@ public class VidaYPersonaje {
                 System.out.println("Tienes " + hp + " / " + hpMax + " HP");
 
                 System.out.println("\n\033[32m---- Historia ----\033[32m");
-                System.out.println("No hay refugios para ti. Abres los ojos bajo el sol abrasador y el polvo radiactivo de una ciudad en ruinas en pleno Yermo. " +
-                        "\nTu piel está putrefacta, pero notas una extraña regeneración fluyendo por tus venas.");
+                TextoMod.imprimirConDelay("No hay refugios para ti. Abres los ojos bajo el sol abrasador y el polvo radiactivo de una ciudad en ruinas en pleno Yermo. " +
+                        "\nTu piel está putrefacta, pero notas una extraña regeneración fluyendo por tus venas.",TextoMod.azul, 10);
 
                 System.out.println("\nRebuscas entre tus harapos y preparas tu equipo de supervivencia: ");
 

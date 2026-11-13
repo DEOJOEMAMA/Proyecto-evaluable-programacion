@@ -199,4 +199,161 @@ public class Combate {
         }
         return ganar;
     }
+
+    public static boolean cbt(int a){
+        Scanner sc=new Scanner(System.in);
+        Random rnd = new Random();
+
+        //Lista de acciones del jugador
+        String acciones[] = new String[3];
+        acciones[0] = "Atacar";
+        acciones[1] = "Defender";
+        acciones[2] = "Huir";
+
+        //Lista de acciones del enemigo
+        String accionesE[] = new String[3];
+        accionesE[0] = "Ataca";
+        accionesE[1] = "Esquiva";
+        accionesE[2] = "Ataca pero Falla";
+
+        //Lista de enemigos
+        String enemigosB[] = new String[2];
+        enemigosB[0] = "General de la Legión";
+        enemigosB[1] = "Comandante de acero";
+
+
+        boolean ganar = false;
+        int accionP = 0;
+        boolean accionPC = false;
+        int accionE = 0;
+        int enemigoMaxHp = 100;
+        int enemigoHp = 0;
+        int armaElegida = 0;
+
+        if (a == 0){
+            enemigoMaxHp = 140;
+            enemigoHp = enemigoMaxHp;
+        } else if (a == 1) {
+            enemigoMaxHp = 200;
+            enemigoHp = enemigoMaxHp;
+        }
+
+        String enemigo = enemigosB[a];
+
+        System.out.println("¡Se acerca un jefe, "+enemigo+" apareció!");
+        System.out.println(enemigo + " tiene " +enemigoMaxHp+" HP");
+
+        while (enemigoHp > 0){
+            accionPC = false;
+            accionE = rnd.nextInt(3);
+            while (accionPC == false) {
+
+                System.out.println("HP: " + VidaYPersonaje.hp + " / " + VidaYPersonaje.hpMax);
+                System.out.println("Elija que acción hará (1-3)");
+                System.out.println("1. " + acciones[0]);
+                System.out.println("2. " + acciones[1]);
+                System.out.println("3. " + acciones[2]);
+                System.out.print("-->");
+
+                try {
+                    accionP = sc.nextByte();
+                    System.out.println("\nHas elegido " + accionP);
+                } catch (InputMismatchException e) {
+                    System.out.println("Eso no es una acción.");
+                    sc.nextLine();
+                    continue; //Vuelve a pedirte una acción
+                }
+                if (accionP == 1) {
+                    armaElegida = elegirArma(sc);
+                    if (armaElegida == -1) {
+                        continue; // volvió atrás
+                    }
+                    // necesita el cartucho en la mochila, pero no se gasta
+                    if (!catalogoArmas[armaElegida][1].isEmpty() && !Inventario.tieneItem(catalogoArmas[armaElegida][1])) {
+                        System.out.println("No tienes " + catalogoArmas[armaElegida][1] + " para esa arma.");
+                        continue; // vuelve al menú sin gastar turno//
+                    }
+                    accionPC = true;
+                } else if (accionP == 2) {
+
+                    if (!VidaYPersonaje.servoArmadura) {
+                        System.out.println("No tienes una Servo Armadura.");
+                        continue; // vuelve al menú sin gastar turno//
+                    }
+                    if (VidaYPersonaje.armaduraActiva) {
+                        System.out.println("La Servo Armadura ya está activa");
+                        continue;
+                    }
+                    if (!Inventario.tieneItem("Fusion Core")) {
+                        System.out.println("Necesitas un Fusion Core para activar la Servo Armadura.");
+                        continue;
+                    }
+                    VidaYPersonaje.armaduraActiva = true;
+                    Inventario.usarItem("Fusion Core"); // se consume al activarla
+                    System.out.println("Insertas el Fusion Core. ¡La Servo Armadura se activa!");
+                    accionPC = true;
+
+                } else if (accionP == 3) {
+                    int esc = rnd.nextInt(2);
+                    if (esc == 1) {
+                        System.out.println("Escapaste exitosamente, pero no conseguiste nada");
+                        ganar = false;
+                        return ganar;
+                    } else {
+                        System.out.println("No conseguiste escapar");
+                        accionPC = true;
+                    }
+                }
+            }
+            if (accionP == 1) {
+                if (accionE == 1) { // el enemigo esquiva
+                    System.out.println(enemigo + " esquiva tu ataque. ¡Fallaste!");
+                } else {
+                    int dano = danoArma[armaElegida];
+
+                    if (rnd.nextInt(100) > 90) {
+                        System.out.println("¡Acertaste un golpe crítico!");
+                        dano = dano + 10;
+                    }
+
+                    enemigoHp = enemigoHp - dano; // aquí baja la vida del enemigo
+                    System.out.println("¡" + enemigo + " recibió " + dano + " de daño!");
+                    System.out.println(enemigo + ": " + Math.max(0, enemigoHp) + " / "+ enemigoMaxHp + " HP");
+                }
+            }
+
+            if (enemigoHp <= 0) {
+                System.out.println("\n¡Has derrotado a " + enemigo + "!");
+                ganar = true;
+                return ganar;
+            }
+            if (accionE == 0) { // Ataca
+                if (VidaYPersonaje.armaduraActiva) {
+                    System.out.println("¡La Servo Armadura absorbe todo el golpe!");
+                    VidaYPersonaje.armaduraActiva = false;
+                } else {
+
+                    if (enemigosB[1].equals("Comandante de acero")) {
+
+                        System.out.print(enemigo + " te golpea. ");
+                        VidaYPersonaje.recibirDano(50);
+
+                    }else{
+
+                        System.out.println(enemigo + " te ataca. ");
+                        VidaYPersonaje.recibirDano(30);
+
+                    }
+
+                }
+
+            }else if (accionE == 1) {
+                System.out.println(enemigo + " esquiva.");
+            } else {
+                System.out.println(enemigo + " ataca, ¡pero falla!");
+            }
+        }
+        return ganar;
+    }
+
 }
