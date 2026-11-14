@@ -6,6 +6,12 @@
 * Alejandro Rózpide
 
 ----
+## Como arrancar el juego
+
+Para iniciar el juego debes irte al archivo Principal dentro de la carpeta de 05-proyecto en src.
+En cuanto llegues a ese archivo lo inicias desde tu editor de código
+
+----
 
 ## Descripción del proyecto
 Nuestro juego consiste en una aventura narrativa con interacciones donde el jugador toma decisiones que pueden afectar el transcurso de una historia con miniuegos, "inventario" y más.
@@ -24,10 +30,12 @@ Nuestro juego consiste en una aventura narrativa con interacciones donde el juga
 * Sistema Combate (Completado)
 * Sistema de curación (Completado)
 * Facciones (Completado)
+* Habitaciones
 
 ----
 
 ## Por hacer
 * Historia
-* Habitaciones
-  
+
+## Enlace repositorio
+* GitHub: https://github.com/DEOJOEMAMA/Proyecto-evaluable-programacion
