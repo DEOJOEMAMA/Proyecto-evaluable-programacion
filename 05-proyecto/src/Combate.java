@@ -56,7 +56,7 @@ public class Combate {
         Random rnd = new Random();
 
         //Lista de acciones del jugador
-        String acciones[] = new String[3];
+        String acciones[] = new String[4];
         acciones[0] = "Atacar";
         acciones[1] = "Defender";
         acciones[2] = "Huir";
@@ -93,6 +93,16 @@ public class Combate {
         }else {
             enemigoMaxHp = 120;
             enemigoHp = enemigoMaxHp;
+        }
+
+        if (!Inventario.tieneItem("Servo Armadura")){
+
+            VidaYPersonaje.servoArmadura=false;
+
+        }else {
+
+            VidaYPersonaje.servoArmadura=true;
+
         }
 
         String enemigo = enemigosL[enemigoN];
@@ -142,7 +152,7 @@ public class Combate {
                         System.out.println("La Servo Armadura ya está activa");
                         continue;
                     }
-                    if (!Inventario.tieneItem("Fusion Core")) {
+                    if (!Inventario.tieneItem("Fusion core")) {
                         System.out.println("Necesitas un Fusion Core para activar la Servo Armadura.");
                         continue;
                     }
@@ -224,9 +234,10 @@ public class Combate {
         accionesE[2] = "Ataca pero Falla";
 
         //Lista de enemigos
-        String enemigosB[] = new String[2];
+        String enemigosB[] = new String[3];
         enemigosB[0] = "General de la Legión";
         enemigosB[1] = "Comandante de acero";
+        enemigosB[2] = "Espia de la Legión";
 
 
         boolean ganar = false;
@@ -241,6 +252,9 @@ public class Combate {
             enemigoMaxHp = 140;
             enemigoHp = enemigoMaxHp;
         } else if (a == 1) {
+            enemigoMaxHp = 200;
+            enemigoHp = enemigoMaxHp;
+        } else if (a == 2) {
             enemigoMaxHp = 200;
             enemigoHp = enemigoMaxHp;
         }

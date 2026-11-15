@@ -25,6 +25,12 @@ public class Historia {
 
         System.out.println();
 
+        Eleccion.desviar();
+
+        Habitaciones.habitaciones();
+
+        System.out.println();
+
         TextoMod.imprimirConDelay("\nLlegas a las puertas de un antiguo complejo tecnológico militar sellado a cal y canto. El paso está completamente bloqueado.\n", TextoMod.azul, 10);
 
         Eleccion.elij2();
