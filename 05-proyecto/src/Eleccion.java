@@ -28,7 +28,9 @@ public class Eleccion {
 
         TextoMod.imprimirConDelay("--- ¿Quieres intentar insertar un objeto cilindrico? --- \n1.Si\n2.No", TextoMod.verde, 10);
 
-        if (Eleccion.respuestas() == 1 && Inventario.tieneItem("Fusion core")){
+        int b = respuestas();
+
+        if (b == 1 && Inventario.tieneItem("Fusion core")){
 
             TextoMod.imprimirConDelay("Tras insertar el fusion core la puerta se abriria. Tras inspeccionar dentro del taller" +
                     "\nencuentras con una servo armadura",TextoMod.azul, 10);
@@ -139,18 +141,20 @@ public class Eleccion {
             TextoMod.imprimirConDelay("2. Ignorar los contenedores y seguir avanzando hacia el complejo abandonado.",TextoMod.verde , 10);
             TextoMod.imprimirConDelay("3. Mostrar Inventario",TextoMod.verde , 10);
 
-            if (Eleccion.respuestas() == 1){
+            int b = respuestas();
+
+            if (b == 1){
 
                 VidaYPersonaje.karma++;
                 Inventario.itemsToInv("Fusion core");
                 return;
-            }else if(Eleccion.respuestas() == 2){
+            }else if(b == 2){
 
                 VidaYPersonaje.karma--;
                 TextoMod.imprimirConDelay("Decides dejar atras los contenedores y sigues avanzando hacia el complejo abandonado",TextoMod.azul , 10);
                 return;
             }
-            if(Eleccion.respuestas() ==3) {
+            if(b==3) {
                 Inventario.mostrarInv();
 
             }
@@ -169,15 +173,16 @@ public class Eleccion {
             TextoMod.imprimirConDelay("1. Intentar forzar la puerta principal con fuerza bruta.",TextoMod.verde , 10);
             TextoMod.imprimirConDelay("2. Buscar un panel de control o acceso alternativo alrededor del complejo.",TextoMod.verde , 10);
             TextoMod.imprimirConDelay("3. Mostrar Inventario",TextoMod.verde , 10);
+            int b = respuestas();
 
-            if (Eleccion.respuestas()==1){
+            if (b==1){
 
                 TextoMod.imprimirConDelay("Te haces daño al intentar abrirlo por la fuerza",TextoMod.verde , 10);
                 VidaYPersonaje.recibirDano(3);
                 VidaYPersonaje.karma--;
 
 
-            }else if (Eleccion.respuestas()==2){
+            }else if (b==2){
 
                 VidaYPersonaje.karma++;
                 Historia.escExt();
@@ -185,12 +190,11 @@ public class Eleccion {
 
             }
 
-            if (Eleccion.respuestas() == 3){
+            if (b == 3){
                 Inventario.mostrarInv();
             }
 
         }
-
 
     }
 
