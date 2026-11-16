@@ -70,8 +70,6 @@ public class Historia {
                 TextoMod.imprimirConDelay("\nDetras de la puerta parece haber algo\n",TextoMod.azul, 10);
 
                 Combate.cbt();
-
-                ItemCurar.cur();
                 return;
 
             }else if (ganado!=true){

@@ -186,7 +186,7 @@ public class Eleccion {
 
                 VidaYPersonaje.karma++;
                 Historia.escExt();
-
+                return;
 
             }
 
