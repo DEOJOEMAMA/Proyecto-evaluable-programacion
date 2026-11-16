@@ -263,8 +263,8 @@ public class Habitaciones {
                 System.out.println("No hay nada mas que hacer arriva");
             }else if (elij == 1){
                 System.out.println("Subes las escaleras");
-                en();
-                System.out.println("No encuentras nada al subir las escaleras, es un lugar decepcionante");
+                Combate.cbt();
+                System.out.println("Por desgracia el enemigo no estaba defendiendo nada interesante, es un lugar decepcionante");
                 contSubi++;
                 while (true) {
                     System.out.println("1. Bajar");
