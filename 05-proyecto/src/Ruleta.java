@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeoutException;
 
 public class Ruleta {
-    public static void main(String[] args) {
+    public static void main() {
         ruleta();
     }
 
@@ -66,7 +66,7 @@ public class Ruleta {
         }
         for (int i = 0; i < rojo.length; i++) {
             if (rojo[i] == numero) {
-                System.out.println("Es rojo");
+                TextoMod.imprimirConDelay("Es rojo", TextoMod.morado, 0);
                 if (elecc == 1) {
                     TextoMod.imprimirConDelay("Has ganado",TextoMod.verde,30);
                     ganar = 2;
@@ -90,7 +90,7 @@ public class Ruleta {
                 ganar = 1;
             } else if (elecc == 3) {
                 TextoMod.imprimirConDelay("Has ganado",TextoMod.verde,30);
-                ganar = 2;
+                ganar = 4;
             }
         }
         return ganar;

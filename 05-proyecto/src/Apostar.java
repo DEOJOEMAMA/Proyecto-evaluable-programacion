@@ -41,6 +41,11 @@ public class Apostar {
             Inventario.itemsToInv("Estimulante");
         } else if (result == 3) {
             System.out.println("Empataste, no pierdes ni ganas un Estimulante");
+        }else if (result == 4) {
+            System.out.println("Ganaste 5 Estimulantes");
+            for (int i = 0; i < 5; i++) {
+                Inventario.itemToInv("Estimulante");
+            }
         }
     }
 }
