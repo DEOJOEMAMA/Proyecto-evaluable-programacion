@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class ItemCurar {
 
     public static String[] itemcur = {"Carne ratatopo", "Estimulante", "Nuke cola"};
-    public static int[] hp = {5, 90, 20};
+    public static int[] hp = {5, 60, 20};
 
     public static int elegircur(Scanner sc) {
 
@@ -21,9 +21,7 @@ public class ItemCurar {
         for (int j = 0; j < n; j++){
             int a = disponibles[j];
 
-            String info = "";
-
-            System.out.println((j + 1) + ". " + itemcur[a] + info +" "+  hp[a]+" pv ");
+            System.out.println((j + 1) + ". " + itemcur[a] +" "+  hp[a]+" pv ");
 
         }
 
@@ -70,6 +68,8 @@ public class ItemCurar {
         System.out.println("Has usado " + nombreItem + " y recuperas " + vid + " PV.");
 
         VidaYPersonaje.curarVida(vid);
+
+        Inventario.usarItem(nombreItem);
 
         System.out.println("HP: " + VidaYPersonaje.hp + " / " + VidaYPersonaje.hpMax);
         // Aquí puedes añadir tu lógica para sumarle 'vid' a la salud actual de tu personaje,

@@ -13,7 +13,7 @@ public class Inventario {
 
         String resp = sc.next();
 
-        if (resp.equalsIgnoreCase("si")){ //EN CASO DE QUE LA RESPUESTA SEA UN SI, IGNORA LAS MAYÚSCULAS, MINÚSCULAS O ACENTOS
+        if (resp.equalsIgnoreCase("si")||resp.equals("1")){ //EN CASO DE QUE LA RESPUESTA SEA UN SI, IGNORA LAS MAYÚSCULAS, MINÚSCULAS O ACENTOS
             // Y COMPRUEBA SI EL STRING resp ES UN SI
 
             if(itemCount<inventory.length){ // EN CASE DE QUE SI OCURRA, SE COMPRUEBA SI LA CANTIDAD DE ITEMS ("itemCount") ES MENOR AL MAXIMO TAMAÑO
@@ -22,7 +22,7 @@ public class Inventario {
                 inventory[itemCount] = objeto; // GUARDA DENTRO DEL ARRAY inventory EL OBJETO. EL VALOR DEL STRING objeto SE DECLARA EN EL JAVA CLASS ItemsYcajas
                 itemCount++;
 
-                System.out.println("Has añadido el objeto a tu inventario");
+                System.out.println("Has añadido "+ objeto +" a tu inventario");
 
             }else {
 

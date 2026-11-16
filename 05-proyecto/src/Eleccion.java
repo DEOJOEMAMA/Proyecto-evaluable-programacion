@@ -16,7 +16,7 @@ public class Eleccion {
 
             case 1 -> {desviar2();}
             case 2 -> {}
-            case 3 ->{Inventario.mostrarInv();}
+            case 3 ->{Inventario.mostrarInv();desviar();}
 
         }
 
@@ -131,27 +131,29 @@ public class Eleccion {
 
         System.out.println("--- Has encontrado unos contenedores militares medio enterrados ---");
 
-        TextoMod.imprimirConDelay("\n¿Qué deseas hacer? 1/2",TextoMod.verde , 10);
-        TextoMod.imprimirConDelay("1. Buscar a fondo en las cajas metálicas.",TextoMod.verde , 10);
-        TextoMod.imprimirConDelay("2. Ignorar los contenedores y seguir avanzando hacia el complejo abandonado.",TextoMod.verde , 10);
-        TextoMod.imprimirConDelay("3. Mostrar Inventario",TextoMod.verde , 10);
 
-        if (Eleccion.respuestas() == 1){
+        while(true){
 
-            VidaYPersonaje.karma++;
-            Inventario.itemsToInv("Fusion core");
+            TextoMod.imprimirConDelay("\n¿Qué deseas hacer? 1/2",TextoMod.verde , 10);
+            TextoMod.imprimirConDelay("1. Buscar a fondo en las cajas metálicas.",TextoMod.verde , 10);
+            TextoMod.imprimirConDelay("2. Ignorar los contenedores y seguir avanzando hacia el complejo abandonado.",TextoMod.verde , 10);
+            TextoMod.imprimirConDelay("3. Mostrar Inventario",TextoMod.verde , 10);
 
-        }else if(Eleccion.respuestas() == 2){
+            if (Eleccion.respuestas() == 1){
 
-            VidaYPersonaje.karma--;
-            TextoMod.imprimirConDelay("Decides dejar atras los contenedores y sigues avanzando hacia el complejo abandonado",TextoMod.azul , 10);
+                VidaYPersonaje.karma++;
+                Inventario.itemsToInv("Fusion core");
+                return;
+            }else if(Eleccion.respuestas() == 2){
 
-        } else if(Eleccion.respuestas() ==3) {
-            Inventario.mostrarInv();
-        }else {
+                VidaYPersonaje.karma--;
+                TextoMod.imprimirConDelay("Decides dejar atras los contenedores y sigues avanzando hacia el complejo abandonado",TextoMod.azul , 10);
+                return;
+            }
+            if(Eleccion.respuestas() ==3) {
+                Inventario.mostrarInv();
 
-            TextoMod.imprimirConDelay("Esa elección no está disponible, escriba 1 o 2 para elegir",TextoMod.azul , 10);
-
+            }
         }
 
     }
@@ -160,27 +162,35 @@ public class Eleccion {
 
         System.out.println("--- Las puertas estan selladas de cal a canto ---");
 
-        TextoMod.imprimirConDelay("\n¿Qué deseas hacer? 1/2",TextoMod.verde , 10);
-        TextoMod.imprimirConDelay("1. Intentar forzar la puerta principal con fuerza bruta.",TextoMod.verde , 10);
-        TextoMod.imprimirConDelay("2. Buscar un panel de control o acceso alternativo alrededor del complejo.",TextoMod.verde , 10);
-        TextoMod.imprimirConDelay("3. Mostrar Inventario",TextoMod.verde , 10);
 
-        if (Eleccion.respuestas()==1){
+        while (true){
 
-            TextoMod.imprimirConDelay("Te haces daño al intentar abrirlo por la fuerza",TextoMod.verde , 10);
-            VidaYPersonaje.recibirDano(3);
-            VidaYPersonaje.karma--;
+            TextoMod.imprimirConDelay("\n¿Qué deseas hacer? 1/2",TextoMod.verde , 10);
+            TextoMod.imprimirConDelay("1. Intentar forzar la puerta principal con fuerza bruta.",TextoMod.verde , 10);
+            TextoMod.imprimirConDelay("2. Buscar un panel de control o acceso alternativo alrededor del complejo.",TextoMod.verde , 10);
+            TextoMod.imprimirConDelay("3. Mostrar Inventario",TextoMod.verde , 10);
 
+            if (Eleccion.respuestas()==1){
 
-        }else if (Eleccion.respuestas()==2){
-
-            VidaYPersonaje.karma++;
-            Historia.escExt();
+                TextoMod.imprimirConDelay("Te haces daño al intentar abrirlo por la fuerza",TextoMod.verde , 10);
+                VidaYPersonaje.recibirDano(3);
+                VidaYPersonaje.karma--;
 
 
-        }else if (Eleccion.respuestas() == 3){
-            Inventario.mostrarInv();
+            }else if (Eleccion.respuestas()==2){
+
+                VidaYPersonaje.karma++;
+                Historia.escExt();
+
+
+            }
+
+            if (Eleccion.respuestas() == 3){
+                Inventario.mostrarInv();
+            }
+
         }
+
 
     }
 
@@ -207,7 +217,10 @@ public class Eleccion {
 
         }
         if (Eleccion.respuestas() > 2) {
+
             System.out.println("Elije un numero del 1 al 2 porfavor");
+
+            facciones();
 
         }
 

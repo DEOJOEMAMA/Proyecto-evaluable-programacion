@@ -60,7 +60,7 @@ public class Historia {
         TextoMod.imprimirConDelay("\nTe apartas de la pesada puerta blindada y bordeas los muros de hormigón agrietado del complejo militar. " +
                 "\nEntre matorrales secos y cables colgando, localizas una vieja caja de conexiones de Vault-Tech cubierta de óxido y polvo radiactivo.",TextoMod.azul, 10);
 
-        TextoMod.imprimirConDelay("\n--- HACKING DE PUERTA --- \n",TextoMod.verde, 10);
+        TextoMod.imprimirConDelay("\n--- HACKEO DE PUERTA --- \n",TextoMod.verde, 10);
 
         while (true) {
             boolean ganado = Ahorcado.jugarAhorcado();
