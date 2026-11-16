@@ -1,6 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.concurrent.TimeoutException;
 
 public class Ruleta {
     public static void main(String[] args) {
@@ -16,48 +17,48 @@ public class Ruleta {
         int ganar = 0;
         int elecc = 0;
         int numero = r.nextInt(37);
-        System.out.println("A que quieres apostar");
+        TextoMod.imprimirConDelay("A que quieres apostar", TextoMod.morado, 0);
         while (true) {
-            System.out.println("1. Rojo");
-            System.out.println("2. Negro");
-            System.out.println("3. Al 0");
-            System.out.println("4. Salir de la ruleta");
+            TextoMod.imprimirConDelay("1. Rojo", TextoMod.verde, 0);
+            TextoMod.imprimirConDelay("2. Negro", TextoMod.verde, 0);
+            TextoMod.imprimirConDelay("3. Cero", TextoMod.verde, 0);
+            TextoMod.imprimirConDelay("4. Salir de la ruleta", TextoMod.verde, 0);
             try {
                 elecc = sc.nextInt();
             } catch (InputMismatchException e) {
                 sc.nextLine();
-                System.out.println("Por favor ingrese un numero del 1 al 4");
+                TextoMod.imprimirConDelay("Por favor ingrese un numero del 1 al 4", TextoMod.verde,0);
             }
             if (elecc > 4) {
-                System.out.println("Por favor di un numero del 1 al 4");
+                TextoMod.imprimirConDelay("Por favor ingrese un numero del 1 al 4", TextoMod.verde,0);
             }
             if (elecc == 1) {
-                System.out.println("Vas a rojo");
+                TextoMod.imprimirConDelay("Vas a rojo",TextoMod.morado, 30);
                 break;
             } else if (elecc == 2) {
-                System.out.println("Vas a negro");
+                TextoMod.imprimirConDelay("Vas a negro", TextoMod.morado, 30);
                 break;
 
             } else if (elecc == 3) {
-                System.out.println("Vas a 0");
+                TextoMod.imprimirConDelay("Vas a 0", TextoMod.morado, 30);
                 break;
             } else if (elecc == 4) {
-                System.out.println("Salir de la ruleta");
+                System.out.println("Sales de la ruleta");
                 return ganar;
             }
         }
 
         for (int i = 0; i < negro.length; i++) {
             if (negro[i] == numero) {
-                System.out.println("Es negro");
+                TextoMod.imprimirConDelay("Es negro", TextoMod.morado, 30);
                 if (elecc == 1) {
-                    System.out.println("Has perdido");
+                    TextoMod.imprimirConDelay("Has perdido", TextoMod.rojo, 30);
                     ganar = 1;
                 } else if (elecc == 2) {
-                    System.out.println("Has ganado");
+                    TextoMod.imprimirConDelay("Has ganado",TextoMod.verde,30);
                     ganar = 2;
                 } else if (elecc == 3) {
-                    System.out.println("Has perdido");
+                    TextoMod.imprimirConDelay("Has perdido", TextoMod.rojo, 30);
                     ganar = 1;
                 }
                 break;
@@ -67,13 +68,13 @@ public class Ruleta {
             if (rojo[i] == numero) {
                 System.out.println("Es rojo");
                 if (elecc == 1) {
-                    System.out.println("Has ganado");
+                    TextoMod.imprimirConDelay("Has ganado",TextoMod.verde,30);
                     ganar = 2;
                 } else if (elecc == 2) {
-                    System.out.println("Has perdido");
+                    TextoMod.imprimirConDelay("Has perdido", TextoMod.rojo, 30);
                     ganar = 1;
                 } else if (elecc == 3) {
-                    System.out.println("Has perdido");
+                    TextoMod.imprimirConDelay("Has perdido", TextoMod.rojo, 30);
                     ganar = 1;
                 }
                 break;
@@ -82,13 +83,13 @@ public class Ruleta {
         if (numero == 0) {
             System.out.println("Es 0");
             if (elecc == 1) {
-                System.out.println("Has perdido");
+                TextoMod.imprimirConDelay("Has perdido", TextoMod.rojo, 30);
                 ganar = 1;
             } else if (elecc == 2) {
-                System.out.println("Has perdido");
+                TextoMod.imprimirConDelay("Has perdido", TextoMod.rojo, 30);
                 ganar = 1;
             } else if (elecc == 3) {
-                System.out.println("Has ganado");
+                TextoMod.imprimirConDelay("Has ganado",TextoMod.verde,30);
                 ganar = 2;
             }
         }
