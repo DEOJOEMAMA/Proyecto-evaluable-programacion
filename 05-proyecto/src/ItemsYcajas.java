@@ -21,14 +21,14 @@ public class ItemsYcajas {
         Random rdm = new Random();
 
         int randCaj = rdm.nextInt(3);
-        int rand = rdm.nextInt(16); // NÚMERO RANDOM HASTA EL 15
+        int rand = rdm.nextInt(15); // NÚMERO RANDOM HASTA EL 15
 
 
         if (randCaj!=2){
 
             if(rand == 14){ // EL IF COMBPRUEBA QUE LA VARIABLE RAND SAQUE UN 10 PARA QUE INICIE EL COMBATE CON EL ENEMIGO
 
-                System.out.println( "¡Ha aparecido un" + items[10] + "!"+ " ¡Te ves envuelto en un combate!\n");
+                System.out.println( "¡Ha aparecido un" + items[14] + "!"+ " ¡Te ves envuelto en un combate!\n");
 
                 Combate.cbt();
 
@@ -47,7 +47,7 @@ public class ItemsYcajas {
 
             if(ganado==true){
 
-                int rng = rdm.nextInt(15);
+                int rng = rdm.nextInt(14);
 
                 String itemencontrado = items[rng];
 

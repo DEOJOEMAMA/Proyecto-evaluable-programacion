@@ -12,8 +12,8 @@ public class FinalMalo {
 
         TextoMod.imprimirConDelay("Te acercas a la armeria y te equipas con armas de gran calibre y curaciones", TextoMod.azul, 10);
 
-        Inventario.itemsToInv("Estimulantes");
-        Inventario.itemsToInv("Estimulantes");
+        Inventario.itemsToInv("Estimulante");
+        Inventario.itemsToInv("Estimulante");
         Inventario.itemsToInv("AK74");
         Inventario.itemsToInv("Balas rifle");
 

@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class ItemCurar {
 
-    public static String[] itemcur = {"Carne ratatopo", "Estimulante", "Nuke cola"};
-    public static int[] hp = {5, 60, 20};
+    public static String[] itemcur = {"Carne ratatopo", "Estimulante", "Nuke cola", "Vendaje"};
+    public static int[] hp = {5, 60, 20, 45};
 
     public static int elegircur(Scanner sc) {
 

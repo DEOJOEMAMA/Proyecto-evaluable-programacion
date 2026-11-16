@@ -116,7 +116,7 @@ public class Combate {
             while (accionPC == false) {
 
                 System.out.println("HP: " + VidaYPersonaje.hp + " / " + VidaYPersonaje.hpMax);
-                System.out.println("Elija que acción hará (1-3)");
+                System.out.println("Elija que acción hará (1-4)");
                 System.out.println("1. " + acciones[0]);
                 System.out.println("2. " + acciones[1]);
                 System.out.println("3. " + acciones[2]);
@@ -221,11 +221,10 @@ public class Combate {
         Random rnd = new Random();
 
         //Lista de acciones del jugador
-        String acciones[] = new String[4];
+        String acciones[] = new String[3];
         acciones[0] = "Atacar";
         acciones[1] = "Defender";
-        acciones[2] = "Huir";
-        acciones[3] = "Curarse";
+        acciones[2] = "Curarse";
 
         //Lista de acciones del enemigo
         String accionesE[] = new String[3];
@@ -274,7 +273,6 @@ public class Combate {
                 System.out.println("1. " + acciones[0]);
                 System.out.println("2. " + acciones[1]);
                 System.out.println("3. " + acciones[2]);
-                System.out.println("4. " + acciones[3]);
                 System.out.print("-->");
 
                 try {
@@ -315,17 +313,7 @@ public class Combate {
                     System.out.println("Insertas el Fusion Core. ¡La Servo Armadura se activa!");
                     accionPC = true;
 
-                } else if (accionP == 3) {
-                    int esc = rnd.nextInt(2);
-                    if (esc == 1) {
-                        System.out.println("Escapaste exitosamente, pero no conseguiste nada");
-                        ganar = false;
-                        return ganar;
-                    } else {
-                        System.out.println("No conseguiste escapar");
-                        accionPC = true;
-                    }
-                }else if (accionP == 4) {
+                }else if (accionP == 3) {
 
                     ItemCurar.cur();
 
@@ -359,10 +347,10 @@ public class Combate {
                     VidaYPersonaje.armaduraActiva = false;
                 } else {
 
-                    if (enemigosB[1].equals("Comandante de acero")) {
+                    if (enemigo.equals(enemigosB[1])) {
 
                         System.out.print(enemigo + " te golpea. ");
-                        VidaYPersonaje.recibirDano(50);
+                        VidaYPersonaje.recibirDano(40);
 
                     }else{
 

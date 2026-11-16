@@ -30,21 +30,26 @@ public class Eleccion {
 
         int b = respuestas();
 
-        if (b == 1 && Inventario.tieneItem("Fusion core")){
+        if(b==1){
 
-            TextoMod.imprimirConDelay("Tras insertar el fusion core la puerta se abriria. Tras inspeccionar dentro del taller" +
-                    "\nencuentras con una servo armadura",TextoMod.azul, 10);
+            if (Inventario.tieneItem("Fusion core")){
 
-            Inventario.itemsToInv("Servo Armadura");
+                TextoMod.imprimirConDelay("Tras insertar el fusion core la puerta se abriria. Tras inspeccionar dentro del taller" +
+                        "\nencuentras con una servo armadura",TextoMod.azul, 10);
+
+                Inventario.itemsToInv("Servo Armadura");
+                Inventario.itemsToInv("Cables");
 
 
+            }else {
 
+                TextoMod.imprimirConDelay("\n Al intentar meter un objeto cilindrico incorrecto el sistema se rompería.",TextoMod.azul, 10);
+
+            }
         }else {
 
-            TextoMod.imprimirConDelay("\n Al intentar meter un objeto cilindrico incorrecto el sistema se rompería." +
-                    "\nSolo pudiste conseguir un par de cables con cinta aislante.",TextoMod.azul, 10);
+            TextoMod.imprimirConDelay("Te vas de la zona",TextoMod.azul,10);
 
-            Inventario.itemsToInv("Cables");
         }
 
     }
@@ -95,9 +100,12 @@ public class Eleccion {
 
     public static void elij0(){
 
-        int a =respuestas();
+
 
         while (true){
+
+            int a =respuestas();
+
             switch (a){
 
                 case 1 -> {
@@ -126,7 +134,7 @@ public class Eleccion {
 
         while(true){
 
-            TextoMod.imprimirConDelay("\n¿Qué deseas hacer? 1/2",TextoMod.verde , 10);
+            TextoMod.imprimirConDelay("\n¿Qué deseas hacer?",TextoMod.verde , 10);
             TextoMod.imprimirConDelay("1. Buscar a fondo en las cajas metálicas.",TextoMod.verde , 10);
             TextoMod.imprimirConDelay("2. Ignorar los contenedores y seguir avanzando hacia el complejo abandonado.",TextoMod.verde , 10);
             TextoMod.imprimirConDelay("3. Mostrar Inventario",TextoMod.verde , 10);
@@ -137,6 +145,8 @@ public class Eleccion {
 
                 VidaYPersonaje.karma++;
                 Inventario.itemsToInv("Fusion core");
+                Inventario.itemsToInv("Estimulante");
+                Inventario.itemsToInv("Vendaje");
                 return;
             }else if(b == 2){
 
@@ -159,7 +169,7 @@ public class Eleccion {
 
         while (true){
 
-            TextoMod.imprimirConDelay("\n¿Qué deseas hacer? 1/2",TextoMod.verde , 10);
+            TextoMod.imprimirConDelay("\n¿Qué deseas hacer?",TextoMod.verde , 10);
             TextoMod.imprimirConDelay("1. Intentar forzar la puerta principal con fuerza bruta.",TextoMod.verde , 10);
             TextoMod.imprimirConDelay("2. Buscar un panel de control o acceso alternativo alrededor del complejo.",TextoMod.verde , 10);
             TextoMod.imprimirConDelay("3. Mostrar Inventario",TextoMod.verde , 10);
@@ -327,7 +337,8 @@ public class Eleccion {
                 "\nintentas defenderte pero todo tu equipo se rompió con la explosión anterior." +
                 "\nConsigues escabullirte pero acabas malherido pero sigues adelante con la esperanza de salir del yermo." +
                 "\n...\nTras varios kilometros y un cuerpo cada vez más debil pierdes la esperanza poco a poco hasta que" +
-                "\ntu cuerpo deja de funcionar y te acabas dando cuenta que el yermo no tiene fin",TextoMod.azul , 10);
+                "\ntu cuerpo deja de funcionar y te acabas dando cuenta que el yermo no tiene fin" +
+                "\n \nHas desbloqueado una variante de final",TextoMod.azul , 10);
 
         VidaYPersonaje.recibirDano(VidaYPersonaje.hp);
 
@@ -448,7 +459,7 @@ public class Eleccion {
             }catch (InputMismatchException e){
 
                 sc.nextLine();
-                System.out.println("Dato no apto, elija 1/2/3");
+                System.out.println("Dato no apto, elija una opcicón disponible");
 
             }
         }
