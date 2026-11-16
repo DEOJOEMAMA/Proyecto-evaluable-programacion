@@ -78,7 +78,7 @@ public class Eleccion {
 
                     return;
                 }
-            return;
+                return;
             }else if(rest.equalsIgnoreCase("no") || rest.equalsIgnoreCase("2")){
 
                 return;
@@ -298,6 +298,27 @@ public class Eleccion {
                         "\n...\nTras varios kilometros y un cuerpo cada vez más debil pierdes la esperanza poco a poco hasta que" +
                         "\ntu cuerpo deja de funcionar y te acabas dando cuenta que el yermo no tiene fin",TextoMod.azul , 10);
 
+                TextoMod.imprimirConDelay("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⠿⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣤⣤⣴⣿⠟⠁⠀⠈⠛⠿⣿⣿⣶⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⢀⣴⣶⣇⠀⢀⣴⣿⠟⠉⠉⠙⠛⠁⠀⠀⠀⠀⠀⠀⠀⠈⠉⠻⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢀⣿⡟⠙⢿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠸⣿⡇⠀⠀⠀⠀⠀⢀⡴⠶⢦⣄⣀⣤⠾⠛⠛⣧⡀⠀⠀⠀⠀⠀⠀⠈⠛⢿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢠⣿⣇⠀⠀⠀⠀⣴⠋⠀⠀⠀⠈⠉⠁⠀⠀⠀⠈⠻⣦⣤⡤⠶⠻⢿⣦⠀⠀⢻⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢸⣿⠉⢳⣶⢶⡿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⣿⠁⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠘⣿⣄⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠄⠀⠀⠀⠀⢠⡼⠋⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⢹⡿⠁⠀⢀⣾⡇⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⡀⠀⠀⠀⠀⠀⠠⣝⢦⡀⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢀⣿⠇⠀⠀⠘⣿⠇⠀⠀⢀⠎⠀⠀⠀⠘⠛⠛⠿⠆⠀⠀⠀⠀⠠⣝⢧⡳⡄⣸⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢸⣿⠀⠀⠀⠀⠀⠀⢠⡾⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢢⣜⢷⣽⣷⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢸⡏⠀⠀⠀⠀⠀⠀⢿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠆⣹⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢸⣇⠀⠀⠀⠀⠀⠀⠈⠛⠂⠀⠀⠀⠀⢠⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢸⣿⠀⠀⣾⣤⣀⣀⣀⢀⣀⣀⣀⡤⠔⠚⢿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⣿⣇⠀⠻⠳⢤⣈⣉⠉⠉⠀⣀⣀⣤⠖⠋⠟⠀⠀⠀⠀⠀⠀⢀⣀⣠⣾⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⠘⣿⣆⠀⠀⠀⠈⠙⣛⣛⠛⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⠿⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⠀⠘⢿⣧⡀⠀⠀⠈⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⠀⠀⠈⠻⣿⣦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⠀⠀⠀⠀⠈⠙⠿⣿⣶⣦⣤⣤⣤⣤⣶⣶⣿⠿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+
                 VidaYPersonaje.recibirDano(VidaYPersonaje.hp);
 
                 return;
@@ -309,14 +330,14 @@ public class Eleccion {
     public static void elecNeutroFin(){
 
 
-            TextoMod.imprimirConDelay("Tras salir del silo decides seguir por tu propio camino para salir del yermo y buscar algo más alla." +
-                    "\nEn tu camino para salir del yermo te cruzarias con unos bandidos que intentan atacarte," +
-                    "\nintentas defenderte pero todo tu equipo se rompió con la explosión anterior." +
-                    "\nConsigues escabullirte pero acabas malherido pero sigues adelante con la esperanza de salir del yermo." +
-                    "\n...\nTras varios kilometros y un cuerpo cada vez más debil pierdes la esperanza poco a poco hasta que" +
-                    "\ntu cuerpo deja de funcionar y te acabas dando cuenta que el yermo no tiene fin",TextoMod.azul , 10);
+        TextoMod.imprimirConDelay("Tras salir del silo decides seguir por tu propio camino para salir del yermo y buscar algo más alla." +
+                "\nEn tu camino para salir del yermo te cruzarias con unos bandidos que intentan atacarte," +
+                "\nintentas defenderte pero todo tu equipo se rompió con la explosión anterior." +
+                "\nConsigues escabullirte pero acabas malherido pero sigues adelante con la esperanza de salir del yermo." +
+                "\n...\nTras varios kilometros y un cuerpo cada vez más debil pierdes la esperanza poco a poco hasta que" +
+                "\ntu cuerpo deja de funcionar y te acabas dando cuenta que el yermo no tiene fin",TextoMod.azul , 10);
 
-            VidaYPersonaje.recibirDano(VidaYPersonaje.hp);
+        VidaYPersonaje.recibirDano(VidaYPersonaje.hp);
 
     }
 
@@ -366,11 +387,11 @@ public class Eleccion {
             ItemCurar.cur();
 
         }
-        
+
 
         TextoMod.imprimirConDelay("\nSientes una presencia detras tuya",TextoMod.azul , 10);
 
-            Combate.cbt();
+        Combate.cbt();
 
         TextoMod.imprimirConDelay("\nTu combate a causado mucho ruido. ¿Qué quieres hacer? \n1.Huir \n2.Quedarte y combatir",TextoMod.verde , 10);
 
