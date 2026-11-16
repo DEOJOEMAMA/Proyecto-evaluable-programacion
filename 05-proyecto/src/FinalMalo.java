@@ -49,6 +49,8 @@ public class FinalMalo {
                 "Has borrado todo atisbo de vida protegida bajo la tierra. Sin descendientes de los viejos refugios ni comunidades libres que puedan reconstruir el mundo, " +
                 "\nel planeta entero queda sumido en una oscuridad estéril y eterna, gobernada únicamente por el miedo y las cenizas bajo el estandarte de la Legión.", TextoMod.azul, 10);
 
+
+
         }else if(Eleccion.respuestas()==2){
 
             TextoMod.imprimirConDelay("Apartas los cuerpos de los técnicos de la consola y tomas el control total del mapa táctico global del Silo Omega." +
@@ -69,13 +71,9 @@ public class FinalMalo {
                     "\nresistencia sobre los asentamientos desprotegidos, inaugurando una era de dominación absoluta donde el Yermo entero se hinca de rodillas ante un " +
                     "\nimperio construido sobre la destrucción total.", TextoMod.azul, 10);
 
+
+
         }
-
-
-    }
-
-    public static void contiunarHistNoFacc(){
-
 
 
     }

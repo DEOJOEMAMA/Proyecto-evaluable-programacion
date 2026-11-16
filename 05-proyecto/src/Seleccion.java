@@ -18,13 +18,17 @@ public class Seleccion {
 
             FinalNeutro.salirFaccHist();
 
-        }else if(Eleccion.unirFacc==0 && VidaYPersonaje.karma<10 && VidaYPersonaje.karma>0){
+        }else{
 
-            FinalNeutro.historiaNeutra();
+            if (Eleccion.unirFacc==1){
 
-        }else if(Eleccion.unirFacc==0 && VidaYPersonaje.karma<0){
+                FinalBueno.continuarHistoria();
 
-            FinalMalo.contiunarHistNoFacc();
+            }else if (Eleccion.unirFacc==2){
+
+                FinalMalo.continuarHistoria();
+
+            }
 
         }
 
