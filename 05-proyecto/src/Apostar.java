@@ -9,9 +9,9 @@ public class Apostar {
         boolean tItem = Inventario.tieneItem("Estimulante");
         if (tItem == true){
             while (true){
-                System.out.println("Tienes Estimulantes para apostar");
-                System.out.println("1. Apostar un Estimulante");
-                System.out.println("2. No apostar");
+                TextoMod.imprimirConDelay("Tienes Estimulantes para apostar", TextoMod.verde, 0);
+                TextoMod.imprimirConDelay("1. Apostar un Estimulante", TextoMod.verde,0);
+                TextoMod.imprimirConDelay("2. No apostar", TextoMod.verde, 0);
                 try {
                     eleccion = sc.nextInt();
                 }catch(InputMismatchException e) {
