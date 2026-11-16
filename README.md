@@ -62,12 +62,8 @@ En cuanto llegues a ese archivo lo inicias desde tu editor de código
 * Sistema Combate (Completado)
 * Sistema de curación (Completado)
 * Facciones (Completado)
-* Habitaciones
-
+* Habitaciones (Completado)
+* Historia (Completado)
 ----
-
-## Por hacer
-* Historia
-
 ## Enlace repositorio
 * GitHub: https://github.com/DEOJOEMAMA/Proyecto-evaluable-programacion
