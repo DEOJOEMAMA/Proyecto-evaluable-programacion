@@ -42,6 +42,10 @@ public class Historia {
 
         Habitaciones.habitaciones();
 
+        System.out.println();
+
+        Habitaciones.habitaciones();
+
         TextoMod.imprimirConDelay("\nLos restos de rascacielos desplomados forman un laberinto de cemento y sombras. " +
                 "\nEstás en el cruce de caminos del Yermo, donde la tensión entre diferentes grupos armados se palpa en el aire.",TextoMod.azul, 10);
 

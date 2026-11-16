@@ -1,4 +1,4 @@
-import javax.sound.midi.Soundbank;
+
 
 public class FinalBueno {
 
@@ -86,8 +86,58 @@ public class FinalBueno {
 
 
 
-        }
+        }else {
 
+            TextoMod.imprimirConDelay("Al no poseer los códigos de seguridad tu y tu peloton colocarian explosivos en la puerta acorazada." +
+                    "\n3, 2, 1\nSurge una explosión y la puerta acorazada se derrumbaría como pedazos, debido al ruido un peloton de la facción enemiga " +
+                    "\nque se encontraba dentro sale junto a uno de sus generales", TextoMod.azul, 10);
+
+            Combate.cbt(0);
+
+            TextoMod.imprimirConDelay("Tras el duro combate, las tropas rezagadas de la legión se rendirian tras haber caído su general" +
+                    "\nTras diez minutos de espera te llegan las noticias que tu pelotón anterior no ha sido capad de cumplir la misión y debido a un espia." +
+                    "\nDecides adentrarte en el silo para desactivar la ojiva nuclear." +
+                    "\nLlegas al panel de control.\n" +
+                    "\n --- Hackeo del silo ---", TextoMod.azul, 10);
+
+            boolean ga = Ahorcado.jugarAhorcado();
+
+            if (ga==true){
+
+                TextoMod.imprimirConDelay("Logras desactivar la ojiva a tiempo y eres capaz de descansar." +
+                        "\nTras llegar a la base tus superiores te condecorarian con la medalla del salvador del yermo.\n" +
+                        "\n\"Has desbloqueado el final bueno", TextoMod.azul, 10);
+
+                TextoMod.imprimirConDelay("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⠿⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣤⣤⣴⣿⠟⠁⠀⠈⠛⠿⣿⣿⣶⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⢀⣴⣶⣇⠀⢀⣴⣿⠟⠉⠉⠙⠛⠁⠀⠀⠀⠀⠀⠀⠀⠈⠉⠻⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢀⣿⡟⠙⢿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠸⣿⡇⠀⠀⠀⠀⠀⢀⡴⠶⢦⣄⣀⣤⠾⠛⠛⣧⡀⠀⠀⠀⠀⠀⠀⠈⠛⢿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢠⣿⣇⠀⠀⠀⠀⣴⠋⠀⠀⠀⠈⠉⠁⠀⠀⠀⠈⠻⣦⣤⡤⠶⠻⢿⣦⠀⠀⢻⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢸⣿⠉⢳⣶⢶⡿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⣿⠁⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠘⣿⣄⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠄⠀⠀⠀⠀⢠⡼⠋⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⢹⡿⠁⠀⢀⣾⡇⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⡀⠀⠀⠀⠀⠀⠠⣝⢦⡀⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢀⣿⠇⠀⠀⠘⣿⠇⠀⠀⢀⠎⠀⠀⠀⠘⠛⠛⠿⠆⠀⠀⠀⠀⠠⣝⢧⡳⡄⣸⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢸⣿⠀⠀⠀⠀⠀⠀⢠⡾⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢢⣜⢷⣽⣷⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢸⡏⠀⠀⠀⠀⠀⠀⢿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠆⣹⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢸⣇⠀⠀⠀⠀⠀⠀⠈⠛⠂⠀⠀⠀⠀⢠⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⢸⣿⠀⠀⣾⣤⣀⣀⣀⢀⣀⣀⣀⡤⠔⠚⢿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⣿⣇⠀⠻⠳⢤⣈⣉⠉⠉⠀⣀⣀⣤⠖⠋⠟⠀⠀⠀⠀⠀⠀⢀⣀⣠⣾⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⠘⣿⣆⠀⠀⠀⠈⠙⣛⣛⠛⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⠿⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⠀⠘⢿⣧⡀⠀⠀⠈⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⠀⠀⠈⠻⣿⣦⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⠀⠀⠀⠀⠈⠙⠿⣿⣶⣦⣤⣤⣤⣤⣶⣶⣿⠿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+                TextoMod.imprimirConDelay("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀",TextoMod.amarillo,0);
+
+            }else {
+
+                TextoMod.imprimirConDelay("No consigues desactivar la ojiva y el misil detona. En los últimos instantes de tu \n" +
+                        "vida te arrepientes de haber dejado a tu platón de lado.\n" +
+                        "Has desbloqueado la variante mala del final bueno", TextoMod.azul, 10);
+
+            }
+
+        }
     }
 
 }

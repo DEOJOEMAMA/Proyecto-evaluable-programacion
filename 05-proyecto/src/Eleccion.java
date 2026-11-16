@@ -39,16 +39,20 @@ public class Eleccion {
 
                 Inventario.itemsToInv("Servo Armadura");
                 Inventario.itemsToInv("Cables");
+                VidaYPersonaje.karma++;
 
 
             }else {
 
                 TextoMod.imprimirConDelay("\n Al intentar meter un objeto cilindrico incorrecto el sistema se rompería.",TextoMod.azul, 10);
+                VidaYPersonaje.karma--;
 
             }
         }else {
 
             TextoMod.imprimirConDelay("Te vas de la zona",TextoMod.azul,10);
+
+            VidaYPersonaje.karma--;
 
         }
 
@@ -88,6 +92,8 @@ public class Eleccion {
                 return;
             }else if(rest.equalsIgnoreCase("no") || rest.equalsIgnoreCase("2")){
 
+                VidaYPersonaje.karma--;
+
                 return;
 
             }else if (rest.equalsIgnoreCase("3")){
@@ -111,7 +117,7 @@ public class Eleccion {
                 case 1 -> {
 
                     Saqueo.saq();
-                    VidaYPersonaje.karma--;
+                    VidaYPersonaje.karma-=2;
                     return;
                 }
                 case 2 -> {
@@ -213,7 +219,7 @@ public class Eleccion {
             }
             case 2 -> {
                 System.out.println("Te has unido a la Legión de Cesar");
-                VidaYPersonaje.karma-=2;
+                VidaYPersonaje.karma-=3;
                 unirFacc = 2;
                 Seleccion.eleccFinal();
                 return;

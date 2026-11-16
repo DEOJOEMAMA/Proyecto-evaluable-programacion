@@ -4,10 +4,11 @@ public class VidaYPersonaje {
     public static int karma;
     public static int hp;
     public static int hpMax;
-    public static boolean servoArmadura = true; // ¿la tienes?
+    public static boolean servoArmadura = false; // ¿la tienes?
     public static boolean armaduraActiva = false;   // ¿está encendida?
 
     public static void comprobarVida(){
+
         if (hp < 1){
             System.out.println("Has muerto, fin de la partida");
             System.exit(0);
@@ -87,6 +88,7 @@ public class VidaYPersonaje {
                 Inventario.itemsToInv("Rifle de palanca");
                 Inventario.itemsToInv("Balas rifle");
                 Inventario.itemsToInv("Mapa");
+                Inventario.itemsToInv("Vendaje");
 
                 System.out.println("\nA lo lejos, siluetas de criaturas hostiles merodean entre los escombros irradiados. Tienes que sobrevivir a este infierno.\n");
 
