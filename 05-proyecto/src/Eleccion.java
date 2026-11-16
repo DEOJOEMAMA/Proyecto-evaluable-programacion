@@ -95,19 +95,9 @@ public class Eleccion {
 
     public static void elij0(){
 
-        int a =0;
+        int a =respuestas();
 
         while (true){
-            try {
-
-                System.out.print("-->");
-                a = sc.nextInt();
-
-            }catch (InputMismatchException e){
-
-                System.out.println("Datos incorrectos ingrese de 1 o 2");
-                sc.nextLine();
-            }
             switch (a){
 
                 case 1 -> {
@@ -251,7 +241,6 @@ public class Eleccion {
 
                 TextoMod.imprimirConDelay("¿Quieres dar la vuelta e intentar unirte a una facción?" +
                         "\n1.Si \n2.No",TextoMod.verde , 10);
-                System.out.print("-->");
 
                 int a = respuestas();
 
@@ -443,8 +432,6 @@ public class Eleccion {
                 return;
             }
         }
-
-
     }
 
     public static int respuestas(){
@@ -464,10 +451,7 @@ public class Eleccion {
                 System.out.println("Dato no apto, elija 1/2/3");
 
             }
-
-
         }
-
     }
 
 }

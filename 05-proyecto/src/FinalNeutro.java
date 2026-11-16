@@ -7,6 +7,7 @@ public class FinalNeutro {
                 "\nla Hermandad de Acero, entre ellos hay una serie de códigos de seguridad.\n",TextoMod.azul , 10);
 
 
+
         Inventario.itemToInv("Código de seguridad");
 
         TextoMod.imprimirConDelay("\nTras saquear los restos del pueblo te encuentras con una puerta acorazada," +
@@ -65,14 +66,16 @@ public class FinalNeutro {
 
             System.out.println("--- ¿Que decides hacer? ---\n1.Permaneces acostado en el suelo y desertas\n2.Vengar a tus compañeros");
 
-            if (Eleccion.respuestas()==1){
+            int a = Eleccion.respuestas();
+
+            if (a==1){
 
                 TextoMod.imprimirConDelay("Te llenas de rabia al enterarte que tus superiores solo estaban reclutando a carne de cañon para " +
                         "\nhacerse paso por las zonas minadas. Te mantendrias en el suelo hasta que se vayan y poco más tarde desertarias.",TextoMod.azul,10);
 
                 Eleccion.elecNeutroFin();
 
-            }else if(Eleccion.respuestas()==2){
+            }else if(a==2){
 
                 if (Eleccion.unirFacc==2){
 
