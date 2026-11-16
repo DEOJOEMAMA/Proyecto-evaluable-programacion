@@ -42,7 +42,8 @@ En cuanto llegues a ese archivo lo inicias desde tu editor de código
 | `TextoMod` | Colores y efecto de escritura |
 -----
 ## Descripción del proyecto
-Nuestro juego consiste en una aventura narrativa con interacciones donde el jugador toma decisiones que pueden afectar el transcurso de una historia con miniuegos, "inventario" y más.
+----
+- Nuestro juego consiste en una aventura narrativa con interacciones donde el jugador toma decisiones que pueden afectar el transcurso de una historia con miniuegos, "inventario" y más.
 ----
 ## Requisitos
 - Java 17 o superior
