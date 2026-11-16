@@ -234,18 +234,17 @@ public class Eleccion {
 
     public static void elec3(){
 
-        System.out.print("-->");
-        String str = sc.next();
+        int b = respuestas();
 
         while (true){
 
-            if (str.equals("1")){
+            if (b==1){
 
                 TextoMod.imprimirConDelay("Tras llegar a la plaza te encuentras con un grupo de reclutadores de dos facciones distintas",TextoMod.azul , 10);
 
                 facciones();
                 return;
-            }else if(str.equals("2")){
+            }else if(b==2){
 
                 TextoMod.imprimirConDelay("Cruzas por los callejones evitando la plaza principal." +
                         "\nTras caminar un rato te giras para ver como hay dos grupos de reclutadores en la plaza principal",TextoMod.azul , 10);
@@ -254,15 +253,15 @@ public class Eleccion {
                         "\n1.Si \n2.No",TextoMod.verde , 10);
                 System.out.print("-->");
 
-                String strs = sc.next();
+                int a = respuestas();
 
                 while (true){
 
-                    if (strs.equalsIgnoreCase("si")||strs.equals("1")){
+                    if (a == 1 ){
 
                         facciones();
                         return;
-                    }else if(strs.equalsIgnoreCase("no")||strs.equals("2")){
+                    }else if(a == 2){
 
                         Habitaciones.habitaciones();
 

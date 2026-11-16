@@ -16,7 +16,7 @@ public class Ahorcado {
         //Lista de palabras
         String palabras[] = new String[5];
         palabras[0] = "java";
-        palabras[1] = "Dani";
+        palabras[1] = "dani";
         palabras[2] = "fallout";
         palabras[3] = "juego";
         palabras[4] = "programacion";
