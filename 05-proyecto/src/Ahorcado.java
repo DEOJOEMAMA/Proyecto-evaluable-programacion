@@ -14,10 +14,12 @@ public class Ahorcado {
         boolean ganar = false;
 
         //Lista de palabras
-        String palabras[] = new String[3];
-        palabras[0] = "fallo";
-        palabras[1] = "hola1";
-        palabras[2] = "hola2";
+        String palabras[] = new String[5];
+        palabras[0] = "java";
+        palabras[1] = "Dani";
+        palabras[2] = "fallout";
+        palabras[3] = "juego";
+        palabras[4] = "programacion";
 
         //Elige un número aleatorio hasta el tamaño del array
         int aleatorio = rnd.nextInt(palabras.length);
